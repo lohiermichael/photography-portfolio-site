@@ -1,0 +1,23 @@
+{
+  "name": "laurent_photographer_site",
+  "version": "1.0.0",
+  "description": "My version of Laurent's portfolio Website for photography",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch app/scss -o public/styles",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lohiermichael/photography-portfolio-site.git"
+  },
+  "author": "Michael Lohier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lohiermichael/photography-portfolio-site/issues"
+  },
+  "homepage": "https://github.com/lohiermichael/photography-portfolio-site#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
