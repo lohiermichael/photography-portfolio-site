@@ -4,7 +4,7 @@
   "description": "My version of Laurent's portfolio Website for photography",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass --watch app/scss -o public/styles",
+    "scss": "node-sass --watch scss -o css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
