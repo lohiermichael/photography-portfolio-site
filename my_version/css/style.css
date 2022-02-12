@@ -65,3 +65,25 @@ table {
 td,
 th {
   padding: 0; }
+
+body {
+  background-color: grey; }
+
+.nav {
+  width: 600px;
+  padding: 1em; }
+  .nav .menu-nav {
+    display: flex;
+    flex-direction: row;
+    color: white; }
+    .nav .menu-nav .menu-nav__item {
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      font-variant: small-caps;
+      letter-spacing: 3px;
+      padding: 15px; }
+      .nav .menu-nav .menu-nav__item:hover {
+        cursor: pointer;
+        color: red;
+        background: #181818; }
