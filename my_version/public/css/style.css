@@ -66,6 +66,9 @@ td,
 th {
   padding: 0; }
 
+a {
+  text-decoration: none; }
+
 body {
   background-color: grey; }
 
@@ -74,16 +77,17 @@ body {
   padding: 1em; }
   .nav .menu-nav {
     display: flex;
-    flex-direction: row;
-    color: white; }
-    .nav .menu-nav .menu-nav__item {
+    flex-direction: row; }
+    .nav .menu-nav__item {
       font-family: "Lato", sans-serif;
       font-weight: 300;
       font-size: 1rem;
       font-variant: small-caps;
-      letter-spacing: 0.2rem;
+      letter-spacing: 0.2rem; }
+    .nav .menu-nav__link {
+      color: white;
       padding: 1rem; }
-      .nav .menu-nav .menu-nav__item:hover {
+      .nav .menu-nav__link:hover {
         cursor: pointer;
         color: #cc0000;
-        background: #292929; }
+        background-color: #292929; }
