@@ -16,15 +16,15 @@ body {
     .menu-nav__item {
       font-family: "Lato", sans-serif;
       font-weight: 300;
-      font-size: 15px;
+      font-size: 1rem;
       font-variant: small-caps;
-      letter-spacing: 3px;
-      padding: 15px;
+      letter-spacing: 0.2rem;
+      padding: 1rem;
 
       &:hover {
         cursor: pointer;
-        color: red;
-        background: #181818;
+        color: hsl(0, 100%, 40%);
+        background: hsl(0, 0%, 16%);
       }
     }
   }
