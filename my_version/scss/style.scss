@@ -7,6 +7,7 @@ body {
 .nav {
   width: 600px;
   padding: 1em;
+  box-sizing: content-box;
 
   .menu-nav {
     display: flex;
