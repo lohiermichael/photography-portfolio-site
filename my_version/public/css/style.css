@@ -70,25 +70,59 @@ a {
   text-decoration: none; }
 
 body {
-  background-color: grey; }
+  background-color: black; }
 
-.nav {
-  width: 600px;
-  padding: 1em;
-  box-sizing: content-box; }
-  .nav .menu-nav {
+.header {
+  display: grid;
+  grid-template-columns: 3fr 2fr; }
+  .header .nav {
+    padding: 1em; }
+    .header .nav .menu-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      .header .nav .menu-nav__item {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-size: 0.8rem;
+        font-variant: small-caps;
+        letter-spacing: 0.2rem; }
+      .header .nav .menu-nav__link {
+        color: #e6e6e6;
+        padding: 1rem; }
+        .header .nav .menu-nav__link:hover {
+          cursor: pointer;
+          color: #cc0000;
+          background-color: #292929; }
+  .header .logo {
     display: flex;
-    flex-direction: row; }
-    .nav .menu-nav__item {
-      font-family: "Lato", sans-serif;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 2rem;
+    padding-top: 1rem; }
+    .header .logo__title {
+      color: #e6e6e6;
       font-weight: 300;
+      font-size: 1.5rem;
+      font-variant: small-caps;
+      text-align: center;
+      letter-spacing: 0.3rem; }
+    .header .logo__subtitle {
+      color: #888;
+      font-weight: 50;
       font-size: 1rem;
       font-variant: small-caps;
-      letter-spacing: 0.2rem; }
-    .nav .menu-nav__link {
-      color: white;
-      padding: 1rem; }
-      .nav .menu-nav__link:hover {
-        cursor: pointer;
-        color: #cc0000;
-        background-color: #292929; }
+      text-align: center;
+      letter-spacing: 0.3rem; }
+    .header .logo__social-media {
+      font-family: quicksand, sans-serif;
+      font-weight: 100;
+      font-size: 0.9rem;
+      font-variant: small-caps;
+      text-align: center;
+      padding-right: 1rem;
+      letter-spacing: 0.4rem; }
+      .header .logo__social-media > a {
+        color: #e6e6e6; }
+        .header .logo__social-media > a:hover {
+          color: #cc0000; }

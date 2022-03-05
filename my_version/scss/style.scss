@@ -1,38 +1,85 @@
 @import "./reset.scss";
+@import "./variables.scss";
 
 body {
-  background-color: grey;
+  background-color: black;
 }
 
-.nav {
-  width: 600px;
-  padding: 1em;
-  box-sizing: content-box;
+.header {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
 
-  .menu-nav {
-    display: flex;
-    flex-direction: row;
+  .nav {
+    padding: 1em;
 
-    &__item {
-      font-family: "Lato", sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      font-variant: small-caps;
-      letter-spacing: 0.2rem;
+    .menu-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
-    }
-
-    &__link {
-      color: white;
-      padding: 1rem;
-
-
-      &:hover {
-        cursor: pointer;
-        color: hsl(0, 100%, 40%);
-        background-color: hsl(0, 0%, 16%);
+      &__item {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-size: 0.8rem;
+        font-variant: small-caps;
+        letter-spacing: 0.2rem;
       }
+
+      &__link {
+        color: $primary-text-color;
+        padding: 1rem;
+
+        &:hover {
+          cursor: pointer;
+          color: $hover-text-color;
+          background-color: hsl(0, 0%, 16%);
+        }
+      }
+    }
   }
 
+  .logo {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 2rem;
+    padding-top: 1rem;
+
+    &__title {
+      color: $primary-text-color;
+      font-weight: 300;
+      font-size: 1.5rem;
+      font-variant: small-caps;
+      text-align: center;
+      letter-spacing: 0.3rem;
+    }
+
+    &__subtitle {
+      color: $secondary-text-color;
+      font-weight: 50;
+      font-size: 1rem;
+      font-variant: small-caps;
+      text-align: center;
+      letter-spacing: 0.3rem;
+    }
+
+    &__social-media {
+      font-family: quicksand, sans-serif;
+      font-weight: 100;
+      font-size: 0.9rem;
+      font-variant: small-caps;
+      text-align: center;
+      padding-right: 1rem;
+      letter-spacing: 0.4rem;
+
+      & > a {
+        color: $primary-text-color;
+
+        &:hover {
+          color: $hover-text-color;
+        }
+      }
+    }
   }
 }
