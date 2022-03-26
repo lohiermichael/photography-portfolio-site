@@ -3,7 +3,7 @@
 @import "./responsive.scss";
 
 
-@include media-tablets-min {
+@include media-phones-max {
 
   body {
   background-color: black;
@@ -149,10 +149,21 @@ a {
 .header {
   color: $primary-text-color;
   background-color: black;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
 
   .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.menu-open {
+      height: 15rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      height: 100vh;
+    }
 
     // Closed (as a burger)
     &__button {
@@ -160,59 +171,139 @@ a {
       height: 2rem;
       display: grid;
       place-items: center;
-      margin: 5em;
       cursor: pointer;
       border: .1em solid $primary-text-color;
 
-      .burger {
-        height: .25em;
-        width: 90%;
-        background-color: $primary-text-color;
-        margin: 1;
-        border-radius: .8rem;
-        position: relative;
+    &.menu-open {
+      margin-left: 1.1rem;
+      margin-top: 1.4rem;
 
+    }
+
+    .burger {
+      height: .25em;
+      width: 90%;
+      background-color: $primary-text-color;
+      margin: 1;
+      border-radius: .8rem;
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        background-color: $primary-text-color;
+        border-radius: .8em;
+        height: .25em;
+        width: 100%;
+      }
+
+      &::before {
+        transform: translateY(-.5em);
+      }
+
+      &::after {
+        transform: translateY(.5em);
+      }
+
+      &.menu-open {
+        background: transparent;
 
         &::before, &::after {
-          content: '';
-          position: absolute;
-          background-color: $primary-text-color;
-          border-radius: .8em;
-          height: .25em;
-          width: 100%;
+          width: 105%;
+          height: .3em;
         }
 
         &::before {
-          transform: translateY(-.5em);
+          transform: translateX(-.1em) rotate(45deg);
         }
 
         &::after {
-          transform: translateY(.5em);
+          transform: translateX(-.1em) rotate(-45deg);
         }
+      }
+    }
+    }
 
+    .menu-nav {
+      display: none;
+
+      &.menu-open {
+        margin-top: 2rem;
+        margin-left: .65rem;
+        display: flex;
+        height: 10rem;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+      }
+
+      &__item {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-size: 0.8rem;
+        font-variant: small-caps;
+        letter-spacing: 0.2rem;
+      }
+
+    }
+
+  }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem .7rem .7rem 3rem;
+    padding: 1rem;
+    width: 100%;
+
+    &__title {
+      color: $primary-text-color;
+      font-weight: 300;
+      font-size: 1rem;
+      font-variant: small-caps;
+      text-align: center;
+      letter-spacing: 0.3rem;
+    }
+
+    &__subtitle {
+      color: $secondary-text-color;
+      font-weight: 50;
+      font-size: 0.8rem;
+      font-variant: small-caps;
+      text-align: center;
+      letter-spacing: 0.3rem;
+    }
+
+    &__social-media {
+      font-family: quicksand, sans-serif;
+      font-weight: 100;
+      font-size: 0.7rem;
+      font-variant: small-caps;
+      text-align: center;
+      padding-right: 1rem;
+      letter-spacing: 0.4rem;
+
+      & > a {
+        color: $primary-text-color;
+
+        &:hover {
+          color: $hover-text-color;
+        }
       }
     }
 
-    // Open (as a cross)
-    &__button.menu-open {
-        .burger {
+    &.menu-open {
+      display: none;
+    }
+  }
 
-          background: transparent;
-
-          &::before, &::after {
-            width: 105%;
-            height: .3em;
-          }
-
-          &::before {
-            transform: translateX(-.1em) rotate(45deg);
-          }
-
-          &::after {
-            transform: translateX(-.1em) rotate(-45deg);
-          }
-        }
-     }
+  &.menu-open {
+    display: inline-block;
+    width: 100vw;
   }
 
 }
@@ -251,6 +342,10 @@ a {
 
   &__rights {
     margin-top: .5rem;
+  }
+
+  &.menu-open {
+    display: none;
   }
 
 }
