@@ -2,13 +2,16 @@
 @import "./variables.scss";
 @import "./responsive.scss";
 
-body {
-  background-color: black;
-}
 
-.header {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
+@include media-tablets-min {
+
+  body {
+  background-color: black;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
 
   .nav {
     padding: 1em;
@@ -133,3 +136,51 @@ body {
 
 }
 
+}
+
+a {
+  color: $primary-text-color;
+
+  &:hover {
+    color: $hover-text-color;
+  }
+}
+
+
+.footer {
+
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 0;
+
+
+  &__list-item {
+    color: $primary-text-color;
+
+    &:nth-child(1) {
+      margin-bottom: .5rem;
+    }
+  }
+
+  &__separator {
+    color: $primary-text-color;
+  }
+
+  &__paragraph {
+    font-family: calibri,monospace;
+    color: $secondary-text-color;
+    font-size: 0.8rem;
+  }
+
+  &__rights {
+    margin-top: .5rem;
+  }
+
+}
