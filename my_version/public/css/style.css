@@ -153,7 +153,8 @@ a {
         .header .nav .menu-nav {
           display: flex; }
           .header .nav .menu-nav .menu-nav__item {
-            letter-spacing: 0.17rem; } }
+            letter-spacing: 0.17rem;
+            margin-left: .8rem; } }
       .header .nav .menu-nav__item {
         font-family: "Lato", sans-serif;
         font-weight: 300;
