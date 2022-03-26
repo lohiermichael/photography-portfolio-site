@@ -22,7 +22,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 6fr;
 
-  @include media-phones-min {
+  @include media-tablets-min {
     grid-template-columns: 5fr 3fr;
   }
 
@@ -39,7 +39,7 @@ a {
       height: 100vh;
     }
 
-    @include media-phones-min {
+    @include media-tablets-min {
       justify-content: flex-start;
     }
 
@@ -57,7 +57,7 @@ a {
         margin-top: 1.4rem;
       }
 
-      @include media-phones-min {
+      @include media-tablets-min {
         display: none;
       }
 
@@ -121,7 +121,7 @@ a {
         flex-direction: column;
       }
 
-      @include media-phones-min {
+      @include media-tablets-min {
         display: flex;
 
         .menu-nav__item {
@@ -228,7 +228,7 @@ a {
   text-align: center;
   padding: 1rem 0;
 
-  @include media-phones-min {
+  @include media-tablets-min {
     margin-bottom: 1rem;
 
     &__list-item {
