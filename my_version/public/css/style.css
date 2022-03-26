@@ -171,7 +171,8 @@ a {
     display: grid;
     place-items: center;
     margin: 5em;
-    cursor: pointer; }
+    cursor: pointer;
+    border: 0.1em solid #e6e6e6; }
     .header .nav__button .burger {
       height: .25em;
       width: 90%;
@@ -196,9 +197,9 @@ a {
       width: 105%;
       height: .3em; }
     .header .nav__button.menu-open .burger::before {
-      transform: rotate(45deg); }
+      transform: translateX(-0.1em) rotate(45deg); }
     .header .nav__button.menu-open .burger::after {
-      transform: rotate(-45deg); }
+      transform: translateX(-0.1em) rotate(-45deg); }
 
 .footer {
   background-color: black;

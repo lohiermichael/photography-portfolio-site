@@ -146,6 +146,76 @@ a {
   }
 }
 
+.header {
+  color: $primary-text-color;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+
+  .nav {
+
+    // Closed (as a burger)
+    &__button {
+      width: 2rem;
+      height: 2rem;
+      display: grid;
+      place-items: center;
+      margin: 5em;
+      cursor: pointer;
+      border: .1em solid $primary-text-color;
+
+      .burger {
+        height: .25em;
+        width: 90%;
+        background-color: $primary-text-color;
+        margin: 1;
+        border-radius: .8rem;
+        position: relative;
+
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          background-color: $primary-text-color;
+          border-radius: .8em;
+          height: .25em;
+          width: 100%;
+        }
+
+        &::before {
+          transform: translateY(-.5em);
+        }
+
+        &::after {
+          transform: translateY(.5em);
+        }
+
+      }
+    }
+
+    // Open (as a cross)
+    &__button.menu-open {
+        .burger {
+
+          background: transparent;
+
+          &::before, &::after {
+            width: 105%;
+            height: .3em;
+          }
+
+          &::before {
+            transform: translateX(-.1em) rotate(45deg);
+          }
+
+          &::after {
+            transform: translateX(-.1em) rotate(-45deg);
+          }
+        }
+     }
+  }
+
+}
 
 .footer {
 
