@@ -1,6 +1,6 @@
 // For phones
-@mixin media-phones-max {
-  @media screen and (max-width: 768px) {
+@mixin media-phones-min {
+  @media screen and (min-width: 768px) {
     @content;
   }
 }

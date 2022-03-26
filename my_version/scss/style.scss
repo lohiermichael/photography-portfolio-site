@@ -3,15 +3,18 @@
 @import "./responsive.scss";
 
 
-@include media-phones-max {
+@include media-phones-min {
 
   body {
   background-color: black;
   }
 
   .header {
+
+  @include media-phones-min {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 3fr 1fr;
+  }
 
   .nav {
     padding: 1em;
@@ -29,16 +32,10 @@
         letter-spacing: 0.2rem;
       }
 
-      &__link {
-        color: $primary-text-color;
-        padding: 1rem;
-
-        &:hover {
-          cursor: pointer;
-          color: $hover-text-color;
-          background-color: hsl(0, 0%, 16%);
-        }
-      }
+      // &__link {
+      //   color: $primary-text-color;
+      //   padding: 1rem;
+      // }
     }
   }
 
@@ -152,6 +149,10 @@ a {
   display: grid;
   grid-template-columns: 1fr 6fr;
 
+  @include media-phones-min {
+    grid-template-columns: 5fr 3fr;
+  }
+
   .nav {
     display: flex;
     justify-content: center;
@@ -165,6 +166,10 @@ a {
       height: 100vh;
     }
 
+    @include media-phones-min {
+      justify-content: flex-start;
+    }
+
     // Closed (as a burger)
     &__button {
       width: 2rem;
@@ -174,54 +179,59 @@ a {
       cursor: pointer;
       border: .1em solid $primary-text-color;
 
-    &.menu-open {
-      margin-left: 1.1rem;
-      margin-top: 1.4rem;
-
-    }
-
-    .burger {
-      height: .25em;
-      width: 90%;
-      background-color: $primary-text-color;
-      margin: 1;
-      border-radius: .8rem;
-      position: relative;
-
-      &::before, &::after {
-        content: '';
-        position: absolute;
-        background-color: $primary-text-color;
-        border-radius: .8em;
-        height: .25em;
-        width: 100%;
-      }
-
-      &::before {
-        transform: translateY(-.5em);
-      }
-
-      &::after {
-        transform: translateY(.5em);
-      }
-
       &.menu-open {
-        background: transparent;
+        margin-left: 1.1rem;
+        margin-top: 1.4rem;
+      }
+
+      @include media-phones-min {
+        display: none;
+      }
+
+      .burger {
+        height: .25em;
+        width: 90%;
+        background-color: $primary-text-color;
+        margin: 1;
+        border-radius: .8rem;
+        position: relative;
 
         &::before, &::after {
-          width: 105%;
-          height: .3em;
+          content: '';
+          position: absolute;
+          background-color: $primary-text-color;
+          border-radius: .8em;
+          height: .25em;
+          width: 100%;
         }
 
         &::before {
-          transform: translateX(-.1em) rotate(45deg);
+          transform: translateY(-.5em);
         }
 
         &::after {
-          transform: translateX(-.1em) rotate(-45deg);
+          transform: translateY(.5em);
+        }
+
+        &.menu-open {
+          background: transparent;
+
+          &::before, &::after {
+            width: 105%;
+            height: .3em;
+          }
+
+          &::before {
+            transform: translateX(-.1em) rotate(45deg);
+          }
+
+          &::after {
+            transform: translateX(-.1em) rotate(-45deg);
+          }
         }
       }
-    }
+
+
     }
 
     .menu-nav {
@@ -238,12 +248,29 @@ a {
         flex-direction: column;
       }
 
+      @include media-phones-min {
+        display: flex;
+
+        .menu-nav__item {
+          letter-spacing: 0.17rem;
+        }
+      }
+
+
       &__item {
         font-family: "Lato", sans-serif;
         font-weight: 300;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         font-variant: small-caps;
         letter-spacing: 0.2rem;
+        padding: 1em;
+
+        &:hover {
+          background-color: $hover-background-header;
+          & > a {
+            color: $hover-text-color;
+          }
+        }
       }
 
     }
@@ -259,6 +286,15 @@ a {
     padding: 1rem .7rem .7rem 3rem;
     padding: 1rem;
     width: 100%;
+
+    &.menu-open {
+      display: none;
+    }
+
+    @include media-phones-min {
+      align-items: flex-end;
+      padding-right: 2rem;
+    }
 
     &__title {
       color: $primary-text-color;
@@ -296,9 +332,6 @@ a {
       }
     }
 
-    &.menu-open {
-      display: none;
-    }
   }
 
   &.menu-open {
