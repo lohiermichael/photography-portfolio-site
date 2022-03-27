@@ -159,6 +159,10 @@ a {
         .header .nav .menu-nav .menu-nav__item {
           font-size: .8rem;
           letter-spacing: .25rem; } }
+      @media screen and (min-width: 1600px) {
+        .header .nav .menu-nav .menu-nav__item {
+          font-size: 1rem;
+          letter-spacing: .3rem; } }
       .header .nav .menu-nav__item {
         font-family: "Lato", sans-serif;
         font-weight: 300;

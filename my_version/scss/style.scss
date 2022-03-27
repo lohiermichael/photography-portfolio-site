@@ -137,6 +137,12 @@ a {
         }
       }
 
+      @include media-large-desktop-min {
+        .menu-nav__item {
+          font-size: 1rem;
+          letter-spacing: .3rem;
+        }
+      }
 
       &__item {
         font-family: "Lato", sans-serif;
