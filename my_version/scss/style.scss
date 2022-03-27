@@ -198,6 +198,22 @@ a {
       }
     }
 
+    @include media-large-desktop-min {
+      .logo {
+        &__title {
+          font-size: 1.7rem;
+          letter-spacing: .5rem;
+        }
+        &__subtitle {
+          font-size: 1.2rem;
+          }
+        &__social-media {
+          font-size: 1.1rem;
+          letter-spacing: 0.5rem;
+        }
+      }
+    }
+
     &__title {
       color: $primary-text-color;
       font-weight: 300;
