@@ -130,13 +130,20 @@ a {
         }
       }
 
+      @include media-small-desktop-min {
+        .menu-nav__item {
+          font-size: .8rem;
+          letter-spacing: .25rem;
+        }
+      }
+
 
       &__item {
         font-family: "Lato", sans-serif;
         font-weight: 300;
-        font-size: 0.7rem;
+        font-size: .7rem;
         font-variant: small-caps;
-        letter-spacing: 0.2rem;
+        letter-spacing: .2rem;
         padding: 1em;
 
         &:hover {
@@ -165,9 +172,24 @@ a {
       display: none;
     }
 
-    @include media-phones-min {
-      align-items: flex-end;
-      padding-right: 2rem;
+    @include media-small-desktop-min {
+
+      padding: 1.3rem;
+
+      .logo {
+        &__title {
+          font-size: 1.5rem;
+          letter-spacing: 0.4rem;
+        }
+        &__subtitle {
+          font-size: 1rem;
+          font-weight: 70;
+        }
+        &__social-media {
+          font-size: 1rem;
+          letter-spacing: 0.5rem;
+        }
+      }
     }
 
     &__title {
@@ -238,21 +260,22 @@ a {
     &__contact-list {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-    }
-
-    &__contact-item {
-      font-family: calibri,monospace;
-      font-size: 0.8rem;
     }
 
     &__separator {
-      color: $primary-text-color;
       margin: 0 1em;
     }
 
-    &__rights {
-      text-align: center;
+  }
+
+  @include media-small-desktop-min {
+    .footer{
+      &__paragraph {
+        font-size: .9rem;
+      }
+      &__contact-item {
+        font-size: .9rem;
+      }
     }
   }
 
@@ -272,15 +295,20 @@ a {
   &__paragraph {
     font-family: calibri,monospace;
     color: $secondary-text-color;
-    font-size: 0.8rem;
+    font-size: .8rem;
+  }
+
+  &__contact-item {
+    font-family: calibri,monospace;
+    font-size: .8rem;
   }
 
   &__rights {
     margin-top: .5rem;
+    font-size: .8rem;
   }
 
   &.menu-open {
     display: none;
   }
-
 }
