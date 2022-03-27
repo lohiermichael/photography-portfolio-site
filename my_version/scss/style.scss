@@ -181,6 +181,8 @@ a {
     @include media-small-desktop-min {
 
       padding: 1.3rem;
+      align-items: flex-end;
+      padding-right: 5vw;
 
       .logo {
         &__title {

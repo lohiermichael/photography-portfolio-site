@@ -187,7 +187,9 @@ a {
       display: none; }
     @media screen and (min-width: 992px) {
       .header .logo {
-        padding: 1.3rem; }
+        padding: 1.3rem;
+        align-items: flex-end;
+        padding-right: 5vw; }
         .header .logo .logo__title {
           font-size: 1.5rem;
           letter-spacing: 0.4rem; }
@@ -197,6 +199,15 @@ a {
         .header .logo .logo__social-media {
           font-size: 1rem;
           letter-spacing: 0.5rem; } }
+    @media screen and (min-width: 1600px) {
+      .header .logo .logo__title {
+        font-size: 1.7rem;
+        letter-spacing: .5rem; }
+      .header .logo .logo__subtitle {
+        font-size: 1.2rem; }
+      .header .logo .logo__social-media {
+        font-size: 1.1rem;
+        letter-spacing: 0.5rem; } }
     .header .logo__title {
       color: #e6e6e6;
       font-weight: 300;
