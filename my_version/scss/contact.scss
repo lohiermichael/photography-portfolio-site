@@ -1,1 +1,141 @@
 @import "./style.scss";
+
+
+.contact-infos-container {
+    background-color: $contact-background-color;
+    width: 90%;
+    height: 77vh;
+    margin-inline: auto;
+    border-radius: .5rem;
+    overflow-y: scroll;
+    padding:  .1rem;
+
+    &.menu-open {
+        display: none;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: 1.5rem;
+        font-variant: small-caps;
+        letter-spacing: .4rem;
+        color: $contact-h1-text-color;
+        margin-block: 1rem;
+    }
+
+    h2 {
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 100;
+        font-size: 1.2rem;
+        font-variant: small-caps;
+        letter-spacing: .2rem;
+        color: $contact-h2-text-color;
+        margin-block: .3rem;
+        display:inline-block;
+        border-bottom: .15rem solid $contact-h2-text-color;
+        padding-bottom:.1rem;
+    }
+
+    &__text {
+        font-family: 'Lato',
+            sans-serif;
+        font-weight: 50;
+        font-size: .9rem;
+        font-weight: 100;
+        color: $contact-text-color;
+    }
+}
+
+.contact-infos-wrapper {
+    border: .2rem solid $contact-h1-text-color;
+    border-radius: .5rem;
+    padding: 1.5rem 1rem;
+    overflow: auto;
+}
+
+
+.infos {
+
+    .bio {
+
+
+        &__intro {
+            margin-block: 1rem;
+        }
+
+        &__availabilities {
+            margin-block: 1rem;
+            & > li {
+                list-style-type: disc;
+                margin-left: 1rem;
+            }
+        }
+
+        &__outro {
+            margin-block: 1rem;
+        }
+    }
+
+    .personal-contacts {
+        &__list {
+            font-family: 'Lato',
+            sans-serif;
+            font-weight: 50;
+            font-size: .9rem;
+            font-weight: 300;
+            color: $contact-text-color;
+            letter-spacing: .06rm;
+            margin-block: 1.5rem;
+
+            & > li {
+                list-style-type: disc;
+                margin-left: 1rem;
+            }
+        }
+
+        .cv-link {
+            color: blue;
+        }
+    }
+}
+
+.contact-form {
+    &__field {
+
+        margin-top: 1rem;
+
+        & > label {
+            cursor: pointer;
+            color: $contact-h1-text-color;
+            display: block;
+            font-weight: 900;
+            margin-bottom: .2rem;
+        }
+
+        & > input, & > textarea {
+            border: .16rem solid $contact-input-color;
+            border-radius: .2rem;
+            font-size: .8rem;
+            padding: .25rem;
+            width: 100%;
+        }
+
+    }
+
+    & > button {
+        margin-top: 1rem;
+        padding: .5rem 1rem;
+        background-color: $contact-h1-text-color;
+        color: $contact-background-color;
+        border-radius: .6rem;
+        cursor: pointer;
+
+        &:hover {
+            color: $contact-h1-text-color;
+            background-color: $contact-background-color;
+            border-color: $contact-h1-text-color;
+        }
+    }
+}

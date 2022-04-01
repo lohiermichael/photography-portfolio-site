@@ -283,5 +283,99 @@ a {
   .footer.menu-open {
     display: none; }
 
-body {
-  background-color: black; }
+.contact-infos-container {
+  background-color: #F9F9F9;
+  width: 90%;
+  height: 77vh;
+  margin-inline: auto;
+  border-radius: .5rem;
+  overflow-y: scroll;
+  padding: .1rem; }
+  .contact-infos-container.menu-open {
+    display: none; }
+  .contact-infos-container h1 {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    font-variant: small-caps;
+    letter-spacing: .4rem;
+    color: #991e58;
+    margin-block: 1rem; }
+  .contact-infos-container h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    font-variant: small-caps;
+    letter-spacing: .2rem;
+    color: #888888;
+    margin-block: .3rem;
+    display: inline-block;
+    border-bottom: 0.15rem solid #888888;
+    padding-bottom: .1rem; }
+  .contact-infos-container__text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 50;
+    font-size: .9rem;
+    font-weight: 100;
+    color: black; }
+
+.contact-infos-wrapper {
+  border: 0.2rem solid #991e58;
+  border-radius: .5rem;
+  padding: 1.5rem 1rem;
+  overflow: auto; }
+
+.infos .bio__intro {
+  margin-block: 1rem; }
+
+.infos .bio__availabilities {
+  margin-block: 1rem; }
+  .infos .bio__availabilities > li {
+    list-style-type: disc;
+    margin-left: 1rem; }
+
+.infos .bio__outro {
+  margin-block: 1rem; }
+
+.infos .personal-contacts__list {
+  font-family: 'Lato', sans-serif;
+  font-weight: 50;
+  font-size: .9rem;
+  font-weight: 300;
+  color: black;
+  letter-spacing: .06rm;
+  margin-block: 1.5rem; }
+  .infos .personal-contacts__list > li {
+    list-style-type: disc;
+    margin-left: 1rem; }
+
+.infos .personal-contacts .cv-link {
+  color: blue; }
+
+.contact-form__field {
+  margin-top: 1rem; }
+  .contact-form__field > label {
+    cursor: pointer;
+    color: #991e58;
+    display: block;
+    font-weight: 900;
+    margin-bottom: .2rem; }
+  .contact-form__field > input, .contact-form__field > textarea {
+    border: 0.16rem solid #AAA;
+    border-radius: .2rem;
+    font-size: .8rem;
+    padding: .25rem;
+    width: 100%; }
+
+.contact-form > button {
+  margin-top: 1rem;
+  padding: .5rem 1rem;
+  background-color: #991e58;
+  color: #F9F9F9;
+  border-radius: .6rem;
+  cursor: pointer; }
+  .contact-form > button:hover {
+    color: #991e58;
+    background-color: #F9F9F9;
+    border-color: #991e58; }

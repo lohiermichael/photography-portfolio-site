@@ -44,72 +44,86 @@
             </div>
         </div>
     </header>
+
     <div class="contact-infos-container">
-        <div class="infos">
-            <h1 class="infos__title">Infos</h1>
-            <div class="bio">
-                <h2 class="bio__title">Bio</h2>
-                <div class="bio__content">
-                    <p class="bio__intro">
-                        French photographer based in Paris.
-                        I travel the world for photography.
-                        Feel free to contact me.
-                    </p>
-                    <ul class="bio__availabilities">
-                        <li>commercial</li>
-                        <li>fashion</li>
-                        <li>interior</li>
-                        <li>wedding</li>
-                        <li>corporate</li>
-                        <li>product</li>
-                        <li>event</li>
+        <div class="contact-infos-wrapper">
+            <div class="infos">
+                <h1 class="infos__title">Infos</h1>
+                <div class="bio">
+                    <h2 class="bio__title">Bio</h2>
+                    <div class="bio__content">
+                        <p class="bio__intro contact-infos-container__text ">
+                            French photographer based in Paris. <br>
+                            I travel the world for photography. <br>
+                            Feel free to contact me.
+                        </p>
+                        <ul class="bio__availabilities contact-infos-container__text">
+                            <p>Available for:</p>
+                            <li>commercial</li>
+                            <li>fashion</li>
+                            <li>interior</li>
+                            <li>wedding</li>
+                            <li>corporate</li>
+                            <li>product</li>
+                            <li>event</li>
+                        </ul>
+                        <p class="bio__outro contact-infos-container__text ">
+                            For any other inquiries, <br>
+                            feel free to contact me.
+                        </p>
+                    </div>
+                </div>
+                <div class="personal-contacts">
+                    <h2 class="personal-contacts__title">Personal Contacts</h2>
+                    <ul class="personal-contacts__list contact-infos-container__text ">
+                        <li>
+                            <b>Tel:</b>
+                            +33 6 12 33 09 64 (What'sApp)</li>
+                        <li>
+                            <b>Mail:</b>
+                            Hello@LaurentXDubois.com <br>
+                            or use this form</li>
+                        <li><b>CV:</b>
+                            <a href="" class="cv-link">Download here</a> <br>
+                            (5mo FULL Portfolio)</li>
                     </ul>
-                    <p class="bio__outro">
-                        For any other inquiries, feel free to contact me.
-                    </p>
                 </div>
             </div>
-            <div class="personal-contacts">
-                <h2 class="personal-contacts__title"></h2>
-                <ul class="personal-contacts__list">
-                    <li>Tel: +33 6 12 33 09 64 (What'sApp)</li>
-                    <li>Mail: Hello@LaurentXDubois.com or use this form</li>
-                    <li>CV: <a href="">Download here</a> (5mo FULL Portfolio)</li>
-                </ul>
-            </div>
+            <form action="" class="contact-form">
+                <h1 class="contat-form__title">Contact</h1>
+                <p class="contact-infos-container__text">
+                    Please fill in the following form
+                </p>
+                <div class="contact-form__field">
+                    <label for="name">*Name:</label>
+                    <input class="contact-infos-container__text" type="text" placeholder="Your name" name="name">
+                </div>
+                <div class="contact-form__field">
+                    <label for="email">*E-mail:</label>
+                    <input class="contact-infos-container__text" type="text" placeholder="Your e-mail" name="email">
+                </div>
+                <div class="contact-form__field">
+                    <label for="telephone">Tel:</label>
+                    <input class="contact-infos-container__text" type="text" placeholder="Your telephone" name="telephone">
+                </div>
+                <div class="contact-form__field">
+                    <label for="website">Website:</label>
+                    <input
+                        type="text"
+                        placeholder="Your website"
+                        name="website"
+                        class="contact-infos-container__text"
+                    >
+                </div>
+                <div class="contact-form__field">
+                    <label for="messge">*Message:</label>
+                    <textarea name="message" id="" cols="20" rows="5" class="contact-infos-container__text" placeholder="Your message"></textarea>
+                </div>
+                <button>Submit</button>
+            </form>
         </div>
-        <form action="" class="contact-form">
-            <h1 class="contat-form__title">Contact</h1>
-            <p class="contact-form__instructions">
-                Please fill in the following form
-            </p>
-            <div class="contact-form__name">
-                <label for="name">*Name:</label>
-                <input type="text" placeholder="Your name" name="name">
-            </div>
-            <div class="contact-form__email">
-                <label for="email">*E-mail:</label>
-                <input type="text" placeholder="Your e-mail" name="email">
-            </div>
-            <div class="contact-form__telephone">
-                <label for="telephone">Tel:</label>
-                <input type="text" placeholder="Your telephone" name="telephone">
-            </div>
-            <div class="contact-form__website">
-                <label for="website">Website:</label>
-                <input
-                    type="text"
-                    placeholder="Your website starting by https://"
-                    name="website"
-                >
-            </div>
-            <div class="contact-form__message">
-                <label for="messge">*Message:</label>
-                <textarea name="message" id="" cols="20" rows="30"></textarea>
-            </div>
-            <button>Submit</button>
-        </form>
     </div>
+
     <footer class="footer">
         <ul class="footer__contact-list">
             <li>
@@ -129,7 +143,7 @@
         </ul>
         <p class="footer__paragraph footer__rights">All rights reserved.</p>
     </footer>
-    <script src="../js/script.js"></script>
+    <script type="module" src="../js/contact.js"></script>
 </body>
 
 </html>
