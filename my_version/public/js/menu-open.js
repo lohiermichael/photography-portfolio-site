@@ -16,14 +16,8 @@ const elementsToChangeOpen = [
     footer
 ]
 
-let isMenuOpen = false
-
 navButton.addEventListener('click', () => {
-    if  (isMenuOpen) {
-        elementsToChangeOpen.map(element => element.classList.remove('menu-open'))
-        isMenuOpen = false;
-    } else {
-        elementsToChangeOpen.map(element => element.classList.add('menu-open'))
-        isMenuOpen = true;
-    }
+    elementsToChangeOpen.map(element =>{
+        element.classList.toggle('menu-open')
+    })
 })
