@@ -291,6 +291,10 @@ a {
   border-radius: .5rem;
   overflow-y: scroll;
   padding: .1rem; }
+  @media screen and (min-width: 768px) {
+    .contact-infos-container {
+      height: initial;
+      margin-top: 15%; } }
   .contact-infos-container.menu-open {
     display: none; }
   .contact-infos-container h1 {
@@ -325,6 +329,10 @@ a {
   border-radius: .5rem;
   padding: 1.5rem 1rem;
   overflow: auto; }
+  @media screen and (min-width: 768px) {
+    .contact-infos-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); } }
 
 .infos .bio__intro {
   margin-block: 1rem; }
@@ -360,13 +368,17 @@ a {
     color: #991e58;
     display: block;
     font-weight: 900;
-    margin-bottom: .2rem; }
+    margin-bottom: .5rem; }
   .contact-form__field > input, .contact-form__field > textarea {
     border: 0.16rem solid #AAA;
     border-radius: .2rem;
     font-size: .8rem;
     padding: .25rem;
     width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .contact-form .contact-form__title {
+    margin-bottom: 2rem; } }
 
 .contact-form > button {
   margin-top: 1rem;

@@ -10,6 +10,11 @@
     overflow-y: scroll;
     padding:  .1rem;
 
+    @include media-tablets-min {
+        height: initial;
+        margin-top: 15%;
+    }
+
     &.menu-open {
         display: none;
     }
@@ -53,6 +58,11 @@
     border-radius: .5rem;
     padding: 1.5rem 1rem;
     overflow: auto;
+
+    @include media-tablets-min {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 
@@ -111,7 +121,7 @@
             color: $contact-h1-text-color;
             display: block;
             font-weight: 900;
-            margin-bottom: .2rem;
+            margin-bottom: .5rem;
         }
 
         & > input, & > textarea {
@@ -122,6 +132,12 @@
             width: 100%;
         }
 
+    }
+
+    @include media-tablets-min {
+        .contact-form__title {
+            margin-bottom: 2rem;
+        }
     }
 
     & > button {
