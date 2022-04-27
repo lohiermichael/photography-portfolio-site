@@ -70,7 +70,11 @@ a {
   text-decoration: none; }
 
 body {
-  background-color: black; }
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh; }
 
 a {
   color: #e6e6e6; }
@@ -79,7 +83,6 @@ a {
 
 .header {
   color: #e6e6e6;
-  background-color: black;
   display: grid;
   grid-template-columns: 1fr 6fr; }
   @media screen and (min-width: 768px) {
@@ -192,13 +195,22 @@ a {
         padding-right: 5vw; }
         .header .logo .logo__title {
           font-size: 1.5rem;
-          letter-spacing: 0.4rem; }
+          letter-spacing: .3rem; }
         .header .logo .logo__subtitle {
           font-size: 1rem;
           font-weight: 70; }
         .header .logo .logo__social-media {
           font-size: 1rem;
           letter-spacing: 0.5rem; } }
+    @media screen and (min-width: 992px) {
+      .header .logo .logo__title {
+        font-size: 1.5rem;
+        letter-spacing: .3rem; }
+      .header .logo .logo__subtitle {
+        font-size: 1rem; }
+      .header .logo .logo__social-media {
+        font-size: .8rem;
+        letter-spacing: 0.5rem; } }
     @media screen and (min-width: 1600px) {
       .header .logo .logo__title {
         font-size: 1.7rem;
@@ -239,9 +251,6 @@ a {
     width: 100vw; }
 
 .footer {
-  background-color: black;
-  position: fixed;
-  bottom: 0;
   display: flex;
   width: 100vw;
   align-items: center;
@@ -250,15 +259,13 @@ a {
   text-align: center;
   padding: 1rem 0; }
   @media screen and (min-width: 768px) {
-    .footer {
-      margin-bottom: 1rem; }
-      .footer__list-item {
-        margin-right: 1rem; }
-      .footer__contact-list {
-        display: flex;
-        flex-direction: row; }
-      .footer__separator {
-        margin: 0 1em; } }
+    .footer__list-item {
+      margin-right: 1rem; }
+    .footer__contact-list {
+      display: flex;
+      flex-direction: row; }
+    .footer__separator {
+      margin: 0 1em; } }
   @media screen and (min-width: 992px) {
     .footer .footer__paragraph {
       font-size: .9rem; }
