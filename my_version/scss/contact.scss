@@ -22,6 +22,15 @@
         letter-spacing: .4rem;
         color: $contact-h1-text-color;
         margin-block: 1rem;
+
+        @include media-small-desktop-min {
+            font-size: 1.7rem;
+        }
+
+        @include media-large-desktop-min {
+            font-size: 2rem;
+            letter-spacing: .5rem;
+        }
     }
 
     h2 {
@@ -35,6 +44,15 @@
         display:inline-block;
         border-bottom: .15rem solid $contact-h2-text-color;
         padding-bottom:.1rem;
+
+        @include media-small-desktop-min {
+            font-size: 1.4rem;
+        }
+
+        @include media-large-desktop-min {
+            font-size: 1.5rem;
+            letter-spacing: .25rem;
+        }
     }
 
     &__text {
@@ -44,6 +62,14 @@
         font-size: .9rem;
         font-weight: 100;
         color: $contact-text-color;
+
+        @include media-small-desktop-min {
+            font-size: 1rem;
+        }
+
+        @include media-large-desktop-min {
+            font-size: 1.1rem;
+        }
     }
 }
 
@@ -51,11 +77,18 @@
     border: .2rem solid $contact-h1-text-color;
     border-radius: .5rem;
     padding: 1.5rem 1rem;
-    overflow: auto;
 
     @include media-tablets-min {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-small-desktop-min {
+        padding-inline: 2.5rem;
+    }
+
+    @include media-large-desktop-min {
+        padding-inline: 5rem;
     }
 }
 
@@ -106,6 +139,8 @@
 }
 
 .contact-form {
+
+
     &__field {
 
         margin-top: 1rem;
@@ -133,6 +168,14 @@
             margin-bottom: 2rem;
         }
     }
+
+    @include media-large-desktop-min {
+        .contact-form__title {
+            margin-bottom: 5rem;
+        }
+    }
+
+
 
     & > button {
         margin-top: 1rem;
