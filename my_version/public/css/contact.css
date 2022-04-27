@@ -70,7 +70,11 @@ a {
   text-decoration: none; }
 
 body {
-  background-color: black; }
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh; }
 
 a {
   color: #e6e6e6; }
@@ -79,7 +83,6 @@ a {
 
 .header {
   color: #e6e6e6;
-  background-color: black;
   display: grid;
   grid-template-columns: 1fr 6fr; }
   @media screen and (min-width: 768px) {
@@ -192,13 +195,22 @@ a {
         padding-right: 5vw; }
         .header .logo .logo__title {
           font-size: 1.5rem;
-          letter-spacing: 0.4rem; }
+          letter-spacing: .3rem; }
         .header .logo .logo__subtitle {
           font-size: 1rem;
           font-weight: 70; }
         .header .logo .logo__social-media {
           font-size: 1rem;
           letter-spacing: 0.5rem; } }
+    @media screen and (min-width: 992px) {
+      .header .logo .logo__title {
+        font-size: 1.5rem;
+        letter-spacing: .3rem; }
+      .header .logo .logo__subtitle {
+        font-size: 1rem; }
+      .header .logo .logo__social-media {
+        font-size: .8rem;
+        letter-spacing: 0.5rem; } }
     @media screen and (min-width: 1600px) {
       .header .logo .logo__title {
         font-size: 1.7rem;
@@ -239,9 +251,6 @@ a {
     width: 100vw; }
 
 .footer {
-  background-color: black;
-  position: fixed;
-  bottom: 0;
   display: flex;
   width: 100vw;
   align-items: center;
@@ -250,15 +259,13 @@ a {
   text-align: center;
   padding: 1rem 0; }
   @media screen and (min-width: 768px) {
-    .footer {
-      margin-bottom: 1rem; }
-      .footer__list-item {
-        margin-right: 1rem; }
-      .footer__contact-list {
-        display: flex;
-        flex-direction: row; }
-      .footer__separator {
-        margin: 0 1em; } }
+    .footer__list-item {
+      margin-right: 1rem; }
+    .footer__contact-list {
+      display: flex;
+      flex-direction: row; }
+    .footer__separator {
+      margin: 0 1em; } }
   @media screen and (min-width: 992px) {
     .footer .footer__paragraph {
       font-size: .9rem; }
@@ -286,15 +293,9 @@ a {
 .contact-infos-container {
   background-color: #F9F9F9;
   width: 90%;
-  height: 77vh;
   margin-inline: auto;
   border-radius: .5rem;
-  overflow-y: scroll;
   padding: .1rem; }
-  @media screen and (min-width: 768px) {
-    .contact-infos-container {
-      height: initial;
-      margin-top: 15%; } }
   .contact-infos-container.menu-open {
     display: none; }
   .contact-infos-container h1 {
@@ -306,6 +307,13 @@ a {
     letter-spacing: .4rem;
     color: #991e58;
     margin-block: 1rem; }
+    @media screen and (min-width: 992px) {
+      .contact-infos-container h1 {
+        font-size: 1.7rem; } }
+    @media screen and (min-width: 1600px) {
+      .contact-infos-container h1 {
+        font-size: 2rem;
+        letter-spacing: .5rem; } }
   .contact-infos-container h2 {
     font-family: 'Quicksand', sans-serif;
     font-weight: 100;
@@ -317,22 +325,40 @@ a {
     display: inline-block;
     border-bottom: 0.15rem solid #888888;
     padding-bottom: .1rem; }
+    @media screen and (min-width: 992px) {
+      .contact-infos-container h2 {
+        font-size: 1.4rem; } }
+    @media screen and (min-width: 1600px) {
+      .contact-infos-container h2 {
+        font-size: 1.5rem;
+        letter-spacing: .25rem; } }
   .contact-infos-container__text {
     font-family: 'Lato', sans-serif;
     font-weight: 50;
     font-size: .9rem;
     font-weight: 100;
     color: black; }
+    @media screen and (min-width: 992px) {
+      .contact-infos-container__text {
+        font-size: 1rem; } }
+    @media screen and (min-width: 1600px) {
+      .contact-infos-container__text {
+        font-size: 1.1rem; } }
 
 .contact-infos-wrapper {
   border: 0.2rem solid #991e58;
   border-radius: .5rem;
-  padding: 1.5rem 1rem;
-  overflow: auto; }
+  padding: 1.5rem 1rem; }
   @media screen and (min-width: 768px) {
     .contact-infos-wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr); } }
+  @media screen and (min-width: 992px) {
+    .contact-infos-wrapper {
+      padding-inline: 2.5rem; } }
+  @media screen and (min-width: 1600px) {
+    .contact-infos-wrapper {
+      padding-inline: 5rem; } }
 
 .infos .bio__intro {
   margin-block: 1rem; }
@@ -379,6 +405,10 @@ a {
 @media screen and (min-width: 768px) {
   .contact-form .contact-form__title {
     margin-bottom: 2rem; } }
+
+@media screen and (min-width: 1600px) {
+  .contact-form .contact-form__title {
+    margin-bottom: 5rem; } }
 
 .contact-form > button {
   margin-top: 1rem;
