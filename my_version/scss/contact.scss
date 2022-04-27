@@ -4,16 +4,10 @@
 .contact-infos-container {
     background-color: $contact-background-color;
     width: 90%;
-    height: 77vh;
     margin-inline: auto;
     border-radius: .5rem;
-    overflow-y: scroll;
     padding:  .1rem;
 
-    @include media-tablets-min {
-        height: initial;
-        margin-top: 15%;
-    }
 
     &.menu-open {
         display: none;
