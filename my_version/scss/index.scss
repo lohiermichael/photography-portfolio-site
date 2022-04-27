@@ -190,7 +190,7 @@ a {
       .logo {
         &__title {
           font-size: 1.5rem;
-          letter-spacing: 0.4rem;
+          letter-spacing: .3rem;
         }
         &__subtitle {
           font-size: 1rem;
@@ -198,6 +198,24 @@ a {
         }
         &__social-media {
           font-size: 1rem;
+          letter-spacing: 0.5rem;
+        }
+      }
+    }
+
+    @include media-small-desktop-min {
+      .logo {
+        &__title {
+          font-size: 1.5rem;
+          letter-spacing: .3rem;
+        }
+
+        &__subtitle {
+          font-size: 1rem;
+        }
+
+        &__social-media {
+          font-size: .8rem;
           letter-spacing: 0.5rem;
         }
       }
