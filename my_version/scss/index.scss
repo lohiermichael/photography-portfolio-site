@@ -117,9 +117,8 @@ a {
         margin-top: 2rem;
         margin-left: .65rem;
         display: flex;
-        height: 10rem;
         width: 100%;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-around;
         flex-direction: column;
       }
@@ -153,14 +152,49 @@ a {
         font-size: .7rem;
         font-variant: small-caps;
         letter-spacing: .2rem;
-        padding: 1em;
+        padding: .5rem;
+        text-align: center;
 
         &:hover {
-          background-color: $hover-background-header;
           & > a {
+            background-color: $hover-background-header;
             color: $hover-text-color;
           }
         }
+      }
+
+      &__link {
+        padding: .5rem;
+        display: inline-block;
+        width: 10rem;
+        text-align: left;
+      }
+
+      &__dropdown-menu {
+        display: none;
+      }
+
+      &__dropdown-item {
+        text-align: left;
+      }
+
+      &__item-with-dropdown {
+        position: relative;
+      }
+
+      &__dropdown-menu {
+        width: 10rem;
+      }
+
+      &__item-with-dropdown:hover > .menu-nav__dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        position: absolute;
+        left: 10.5rem;
+        top: .5rem;
+        padding-inline:1rem;
+        background-color: $dropdown-menu-background-color;
       }
 
     }
