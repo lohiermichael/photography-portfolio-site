@@ -2,9 +2,9 @@
   "name": "laurent_photographer_site",
   "version": "1.0.0",
   "description": "My version of Laurent's portfolio Website for photography",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "scss": "node-sass --watch scss -o public/css",
+    "scss": "node-sass --watch src/scss -o src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/lohiermichael/photography-portfolio-site#readme",
   "dependencies": {
     "node-sass": "^7.0.1"
+  },
+  "devDependencies": {
+    "express": "^4.18.1"
   }
 }
