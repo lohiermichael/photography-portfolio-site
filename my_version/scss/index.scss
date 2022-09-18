@@ -9,7 +9,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-
 }
 
 
@@ -26,14 +25,19 @@ a {
   display: grid;
   grid-template-columns: 1fr 6fr;
 
-  @include media-tablets-min {
+  @include media-small-desktop-min {
     grid-template-columns: 5fr 3fr;
   }
 
   .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+    @include media-small-desktop-min {
+      justify-content: flex-start;
+    }
 
     &.menu-open {
       height: 15rem;
@@ -41,10 +45,6 @@ a {
       align-items: flex-start;
       flex-direction: column;
       height: 100vh;
-    }
-
-    @include media-tablets-min {
-      justify-content: flex-start;
     }
 
     // Closed (as a burger)
@@ -61,7 +61,8 @@ a {
         margin-top: 1.4rem;
       }
 
-      @include media-tablets-min {
+
+      @include media-small-desktop-min {
         display: none;
       }
 
@@ -111,39 +112,24 @@ a {
     }
 
     .menu-nav {
+
+      // On phone screen, by default, the menu is not displayed, only on click
+      // it changes
       display: none;
+
+      @include media-small-desktop-min {
+        display: flex;
+        margin-left: 2rem;
+      }
 
       &.menu-open {
         margin-top: 2rem;
-        margin-left: .65rem;
+        margin-left: 2rem;
         display: flex;
         width: 100%;
         align-items: flex-start;
         justify-content: space-around;
         flex-direction: column;
-      }
-
-      @include media-tablets-min {
-        display: flex;
-
-        .menu-nav__item {
-          letter-spacing: 0.17rem;
-          margin-left: .8rem;
-        }
-      }
-
-      @include media-small-desktop-min {
-        .menu-nav__item {
-          font-size: .8rem;
-          letter-spacing: .25rem;
-        }
-      }
-
-      @include media-large-desktop-min {
-        .menu-nav__item {
-          font-size: 1rem;
-          letter-spacing: .3rem;
-        }
       }
 
       &__item {
@@ -152,22 +138,34 @@ a {
         font-size: .7rem;
         font-variant: small-caps;
         letter-spacing: .2rem;
-        padding: .5rem;
-        text-align: center;
+        padding-right: 4rem;
+        padding-block: .5rem;
+        text-align: left;
+        width: 13rem;
+
+        @include media-small-desktop-min {
+          padding-inline: 1.2rem;
+          padding-block: .5rem;
+          text-align: center;
+          width: inherit;
+        }
+
+        @include media-large-desktop-min {
+            font-size: 1rem;
+            letter-spacing: .3rem;
+            white-space: nowrap;
+            padding-inline: 3.5rem;
+        }
 
         &:hover {
-          & > a {
-            background-color: $hover-background-header;
-            color: $hover-text-color;
-          }
+          background-color: $hover-background-header;
+          color: $hover-text-color;
         }
+
       }
 
       &__link {
         padding: .5rem;
-        display: inline-block;
-        width: 10rem;
-        text-align: left;
       }
 
       &__dropdown-menu {
@@ -176,6 +174,7 @@ a {
 
       &__dropdown-item {
         text-align: left;
+        padding-block: .5rem;
       }
 
       &__item-with-dropdown {
@@ -191,10 +190,22 @@ a {
         flex-direction: column;
         gap: .4rem;
         position: absolute;
-        left: 10.5rem;
-        top: .5rem;
-        padding-inline:1rem;
+        left: 13rem;
+        top: 0rem;
+        width: 12rem;
+        padding-inline: 1rem;
         background-color: $dropdown-menu-background-color;
+
+        @include media-small-desktop-min {
+          left: 0;
+          top: 1.75rem;
+          width: 100%;
+        }
+
+        @include media-large-desktop-min {
+          top: 2.02rem;
+        }
+
       }
 
     }
@@ -215,62 +226,6 @@ a {
       display: none;
     }
 
-    @include media-small-desktop-min {
-
-      padding: 1.3rem;
-      align-items: flex-end;
-      padding-right: 5vw;
-
-      .logo {
-        &__title {
-          font-size: 1.5rem;
-          letter-spacing: .3rem;
-        }
-        &__subtitle {
-          font-size: 1rem;
-          font-weight: 70;
-        }
-        &__social-media {
-          font-size: 1rem;
-          letter-spacing: 0.5rem;
-        }
-      }
-    }
-
-    @include media-small-desktop-min {
-      .logo {
-        &__title {
-          font-size: 1.5rem;
-          letter-spacing: .3rem;
-        }
-
-        &__subtitle {
-          font-size: 1rem;
-        }
-
-        &__social-media {
-          font-size: .8rem;
-          letter-spacing: 0.5rem;
-        }
-      }
-    }
-
-    @include media-large-desktop-min {
-      .logo {
-        &__title {
-          font-size: 1.7rem;
-          letter-spacing: .5rem;
-        }
-        &__subtitle {
-          font-size: 1.2rem;
-          }
-        &__social-media {
-          font-size: 1.1rem;
-          letter-spacing: 0.5rem;
-        }
-      }
-    }
-
     &__title {
       color: $primary-text-color;
       font-weight: 300;
@@ -278,6 +233,11 @@ a {
       font-variant: small-caps;
       text-align: center;
       letter-spacing: 0.3rem;
+
+      @include media-large-desktop-min {
+        font-size: 1.7rem;
+        letter-spacing: .5rem;
+      }
     }
 
     &__subtitle {
@@ -287,6 +247,10 @@ a {
       font-variant: small-caps;
       text-align: center;
       letter-spacing: 0.3rem;
+
+      @include media-large-desktop-min {
+          font-size: 1.2rem;
+         }
     }
 
     &__social-media {
@@ -297,6 +261,11 @@ a {
       text-align: center;
       padding-right: 1rem;
       letter-spacing: 0.4rem;
+
+      @include media-large-desktop-min {
+        font-size: 1.1rem;
+        letter-spacing: .5rem;
+      }
 
       & > a {
         color: $primary-text-color;
@@ -310,7 +279,6 @@ a {
   }
 
   &.menu-open {
-    display: inline-block;
     width: 100vw;
   }
 
@@ -325,35 +293,6 @@ a {
   flex-direction: column;
   text-align: center;
   padding: 1rem 0;
-
-  @include media-tablets-min {
-
-    &__list-item {
-      margin-right: 1rem;
-    }
-
-    &__contact-list {
-      display: flex;
-      flex-direction: row;
-    }
-
-    &__separator {
-      margin: 0 1em;
-    }
-
-  }
-
-  @include media-small-desktop-min {
-    .footer{
-      &__paragraph {
-        font-size: .9rem;
-      }
-      &__contact-item {
-        font-size: .9rem;
-      }
-    }
-  }
-
 
   &__list-item {
     color: $primary-text-color;
@@ -381,6 +320,23 @@ a {
   &__rights {
     margin-top: .5rem;
     font-size: .8rem;
+  }
+
+  @include media-tablets-min {
+
+    &__list-item {
+      margin-right: 1rem;
+    }
+
+    &__contact-list {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__separator {
+      margin: 0 1em;
+    }
+
   }
 
   &.menu-open {
