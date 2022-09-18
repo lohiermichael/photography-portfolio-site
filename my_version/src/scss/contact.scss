@@ -1,5 +1,6 @@
-@import "./index.scss";
-
+@import "./reset.scss";
+@import "./variables.scss";
+@import "./responsive.scss";
 
 .contact-infos-container {
     background-color: $contact-background-color;
@@ -91,7 +92,6 @@
         padding-inline: 5rem;
     }
 }
-
 
 .infos {
 

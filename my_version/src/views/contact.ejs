@@ -1,0 +1,80 @@
+<%- include('./partials/header', {otherCSSFile: "contact"}) %>
+<div class="contact-infos-container">
+    <div class="contact-infos-wrapper">
+        <div class="infos">
+            <h1 class="infos__title">Infos</h1>
+            <div class="bio">
+                <h2 class="bio__title">Bio</h2>
+                <div class="bio__content">
+                    <p class="bio__intro contact-infos-container__text ">
+                        French photographer based in Paris. <br>
+                        I travel the world for photography. <br>
+                        Feel free to contact me.
+                    </p>
+                    <ul class="bio__availabilities contact-infos-container__text">
+                        <p>Available for:</p>
+                        <li>commercial</li>
+                        <li>fashion</li>
+                        <li>interior</li>
+                        <li>wedding</li>
+                        <li>corporate</li>
+                        <li>product</li>
+                        <li>event</li>
+                    </ul>
+                    <p class="bio__outro contact-infos-container__text ">
+                        For any other inquiries, <br>
+                        feel free to contact me.
+                    </p>
+                </div>
+            </div>
+            <div class="personal-contacts">
+                <h2 class="personal-contacts__title">Personal Contacts</h2>
+                <ul class="personal-contacts__list contact-infos-container__text ">
+                    <li>
+                        <b>Tel:</b>
+                        +33 6 12 33 09 64 (What'sApp)</li>
+                    <li>
+                        <b>Mail:</b>
+                        Hello@LaurentXDubois.com <br>
+                        or use this form</li>
+                    <li><b>CV:</b>
+                        <a href="" class="cv-link">Download here</a> <br>
+                        (5mo FULL Portfolio)</li>
+                </ul>
+            </div>
+        </div>
+        <form action="" class="contact-form">
+            <h1 class="contact-form__title">Contact</h1>
+            <p class="contact-infos-container__text">
+                Please fill in the following form:
+            </p>
+            <div class="contact-form__field">
+                <label for="name">*Name:</label>
+                <input class="contact-infos-container__text" type="text" placeholder="Your name" name="name">
+            </div>
+            <div class="contact-form__field">
+                <label for="email">*E-mail:</label>
+                <input class="contact-infos-container__text" type="text" placeholder="Your e-mail" name="email">
+            </div>
+            <div class="contact-form__field">
+                <label for="telephone">Tel:</label>
+                <input class="contact-infos-container__text" type="text" placeholder="Your telephone" name="telephone">
+            </div>
+            <div class="contact-form__field">
+                <label for="website">Website:</label>
+                <input
+                    type="text"
+                    placeholder="Your website"
+                    name="website"
+                    class="contact-infos-container__text"
+                >
+            </div>
+            <div class="contact-form__field">
+                <label for="messge">*Message:</label>
+                <textarea name="message" id="" cols="20" rows="5" class="contact-infos-container__text" placeholder="Your message"></textarea>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+</div>
+<%- include('./partials/footer') %>

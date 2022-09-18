@@ -4,13 +4,25 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-app.use(express.static(path.join(__dirname, 'public/html')));
+// Static files
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/css', express.static(path.join(__dirname + 'public/css')));
+app.use('/js', express.static(path.join(__dirname + 'public/js')));
 
+// Set views
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// Routes
 app.get('/', (_, result) => {
-    result.render('index.html');
+    result.render('gallery');
 });
 
+app.get('/contact', (_, result) => {
+    result.render('contact');
+});
+
+// Port listening
 app.listen(PORT, () => {
     console.log(`Application listening at http://localhost:${PORT}`);
 });
