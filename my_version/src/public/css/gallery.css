@@ -68,3 +68,16 @@ th {
 
 a {
   text-decoration: none; }
+
+.gallery-container {
+  color: #e6e6e6;
+  width: 90%;
+  margin-inline: auto;
+  margin-block: 1rem; }
+  @media screen and (min-width: 768px) {
+    .gallery-container {
+      height: 60vh;
+      display: flex;
+      overflow-x: scroll;
+      width: 95%;
+      gap: 1rem; } }

@@ -1,3 +1,9 @@
 <%- include('./partials/header', {otherCSSFile: "gallery" }) %>
-TOTO
+<div class="gallery-container">
+    <% galleryImages.forEach(imagePath => { %>
+        <img
+            src="<%= relativePathImages %>/<%= imagePath %>"
+            alt="<%= relativePathImages %>/<%= imagePath %> not found">
+    <% }); %>
+</div>
 <%- include('./partials/footer') %>

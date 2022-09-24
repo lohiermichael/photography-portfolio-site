@@ -7,8 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laurent X. Dubois </title>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/<%= otherCSSFile %>.css" />
     <link rel="shortcut icon" type="image/x-icon" href="/img/siteIcon.png" />
+    <% if (locals.otherCSSFile) { %>
+        <link rel="stylesheet" href="/css/<%= otherCSSFile %>.css" />
+    <% } %>
+    <% if (locals.otherJSFile) { %>
+        <script src="/js/<%= otherJSFile %>.js" defer></script>
+    <% } %>
 </head>
 
 <body>

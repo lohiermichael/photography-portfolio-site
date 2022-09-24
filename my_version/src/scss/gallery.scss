@@ -1,3 +1,19 @@
 @import "./reset.scss";
 @import "./variables.scss";
 @import "./responsive.scss";
+
+.gallery-container {
+    color: $primary-text-color;
+    width: 90%;
+    margin-inline: auto;
+    margin-block: 1rem;
+
+    @include media-tablets-min {
+        height: 60vh;
+        display: flex;
+        overflow-x: scroll;
+        width: 95%;
+        gap: 1rem;
+    }
+
+}

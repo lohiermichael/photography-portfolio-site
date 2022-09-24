@@ -1,8 +1,10 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = 3000;
+const GALLERY_IMAGES_FOLDER = path.join(__dirname + '/public/img/');
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -16,7 +18,13 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.get('/', (_, result) => {
-    result.render('gallery');
+
+    // Get all images in the file
+    rootPathImages = path.join(GALLERY_IMAGES_FOLDER, 'main');
+    galleryImages = fs.readdirSync(rootPathImages);
+    console.log(galleryImages);
+
+    result.render('gallery', { relativePathImages: '/img/main' , galleryImages });
 });
 
 app.get('/contact', (_, result) => {
