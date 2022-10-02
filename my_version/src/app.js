@@ -9,8 +9,10 @@ const GALLERY_IMAGES_FOLDER = path.join(__dirname + '/public/img/');
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/css', express.static(path.join(__dirname + 'public/css')));
-app.use('/js', express.static(path.join(__dirname + 'public/js')));
 app.use('/img', express.static(path.join(__dirname + 'public/img')));
+app.use('/data', express.static(path.join(__dirname + 'public/data')));
+app.use('/js', express.static(path.join(__dirname + 'public/js')));
+app.use('/video', express.static(path.join(__dirname + 'public/video')));
 
 // Set views
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +31,12 @@ app.get('/', (_, result) => {
 app.get('/contact', (_, result) => {
     result.render('contact');
 });
+
+app.get('/cv', (_, result) => {
+    result.sendFile(
+        path.join(__dirname + '/public/data/CVLaurentDuboisPhotography.pdf')
+    );
+})
 
 // Port listening
 app.listen(PORT, () => {
