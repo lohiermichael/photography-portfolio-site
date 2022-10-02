@@ -69,6 +69,20 @@ th {
 a {
   text-decoration: none; }
 
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0; }
+
+.background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; }
+
 .gallery-container {
   color: #e6e6e6;
   width: 90%;
@@ -78,6 +92,6 @@ a {
     .gallery-container {
       height: 60vh;
       display: flex;
-      overflow-x: scroll;
       width: 95%;
-      gap: 1rem; } }
+      gap: 1rem;
+      overflow-x: scroll; } }
