@@ -22,7 +22,6 @@ app.get('/', (_, result) => {
     // Get all images in the file
     rootPathImages = path.join(GALLERY_IMAGES_FOLDER, 'main');
     galleryImages = fs.readdirSync(rootPathImages);
-    console.log(galleryImages);
 
     result.render('gallery', { relativePathImages: '/img/main' , galleryImages });
 });
