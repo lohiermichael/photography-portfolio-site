@@ -13,6 +13,10 @@ app.use('/img', express.static(path.join(__dirname + 'public/img')));
 app.use('/data', express.static(path.join(__dirname + 'public/data')));
 app.use('/js', express.static(path.join(__dirname + 'public/js')));
 app.use('/video', express.static(path.join(__dirname + 'public/video')));
+// Handling non matching request from the client
+app.use((_, result) => {
+    result.status(404).render('404')
+});
 
 // Set views
 app.set('views', path.join(__dirname, 'views'));

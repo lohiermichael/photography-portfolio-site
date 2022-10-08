@@ -1,0 +1,14 @@
+@import "./reset.scss";
+@import "./variables.scss";
+@import "./responsive.scss";
+
+.error-img {
+    height: 50vh;
+    object-fit: scale-down;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 2rem;
+}
