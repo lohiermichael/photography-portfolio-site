@@ -13,10 +13,6 @@ app.use('/img', express.static(path.join(__dirname + 'public/img')));
 app.use('/data', express.static(path.join(__dirname + 'public/data')));
 app.use('/js', express.static(path.join(__dirname + 'public/js')));
 app.use('/video', express.static(path.join(__dirname + 'public/video')));
-// Handling non matching request from the client
-app.use((_, result) => {
-    result.status(404).render('404')
-});
 
 // Set views
 app.set('views', path.join(__dirname, 'views'));
@@ -41,6 +37,33 @@ app.get('/cv', (_, result) => {
         path.join(__dirname + '/public/data/CVLaurentDuboisPhotography.pdf')
     );
 })
+
+
+GALLERY_NAMES = [
+    'fashion-week-1',
+    'fashion-week-2',
+    'portraits',
+    'projects',
+    'agency-test',
+    'editorial'
+]
+
+// Routes
+app.get('/:galleryName', (request, result) => {
+    galleryName = request.params['galleryName']
+    if (!GALLERY_NAMES.includes(galleryName)) {
+        result.status(404).render('404')
+    } else {
+        // Get all images in the file
+        rootPathImages = path.join(GALLERY_IMAGES_FOLDER, galleryName);
+        galleryImages = fs.readdirSync(rootPathImages);
+
+        result.render(
+            'gallery',
+            { relativePathImages: `/img/${galleryName}`, galleryImages }
+        );
+    }
+});
 
 // Port listening
 app.listen(PORT, () => {
