@@ -19,21 +19,21 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Routes
-app.get('/', (_, result) => {
+app.get('/', (_, response) => {
 
     // Get all images in the file
     rootPathImages = path.join(GALLERY_IMAGES_FOLDER, 'main');
     galleryImages = fs.readdirSync(rootPathImages);
 
-    result.render('gallery', { relativePathImages: '/img/main' , galleryImages });
+    response.render('gallery', { relativePathImages: '/img/main' , galleryImages });
 });
 
-app.get('/contact', (_, result) => {
-    result.render('contact');
+app.get('/contact', (_, response) => {
+    response.render('contact');
 });
 
-app.get('/cv', (_, result) => {
-    result.sendFile(
+app.get('/cv', (_, response) => {
+    response.sendFile(
         path.join(__dirname + '/public/data/CVLaurentDuboisPhotography.pdf')
     );
 })
@@ -49,16 +49,16 @@ GALLERY_NAMES = [
 ]
 
 // Routes
-app.get('/:galleryName', (request, result) => {
+app.get('/:galleryName', (request, response) => {
     galleryName = request.params['galleryName']
     if (!GALLERY_NAMES.includes(galleryName)) {
-        result.status(404).render('404')
+        response.status(404).render('404')
     } else {
         // Get all images in the file
         rootPathImages = path.join(GALLERY_IMAGES_FOLDER, galleryName);
         galleryImages = fs.readdirSync(rootPathImages);
 
-        result.render(
+        response.render(
             'gallery',
             { relativePathImages: `/img/${galleryName}`, galleryImages }
         );
