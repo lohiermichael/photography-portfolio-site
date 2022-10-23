@@ -32,6 +32,10 @@ app.get('/contact', (_, response) => {
     response.render('contact');
 });
 
+app.get('/thanks', (_, response) => {
+    response.render('thanks');
+});
+
 app.get('/cv', (_, response) => {
     response.sendFile(
         path.join(__dirname + '/public/data/CVLaurentDuboisPhotography.pdf')
