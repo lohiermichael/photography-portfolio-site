@@ -45,7 +45,7 @@
                 </ul>
             </div>
         </div>
-        <form action="" class="contact-form">
+        <form action="/contact" method="post" class="contact-form">
             <h1 class="contact-form__title">Contact</h1>
             <p class="contact-infos-container__text">
                 Please fill in the following form:
@@ -56,7 +56,8 @@
                     class="contact-infos-container__text"
                     type="text"
                     placeholder="Your name"
-                    name="name">
+                    name="name"
+                    required>
             </div>
             <div class="contact-form__field">
                 <label for="email">*E-mail:</label>
@@ -64,7 +65,8 @@
                     class="contact-infos-container__text"
                     type="text"
                     placeholder="Your e-mail"
-                    name="email">
+                    name="email"
+                    required>
             </div>
             <div class="contact-form__field">
                 <label for="telephone">Tel:</label>
@@ -91,10 +93,11 @@
                     cols="20"
                     rows="5"
                     class="contact-infos-container__text"
-                    placeholder="Your message">
+                    placeholder="Your message"
+                    required>
                 </textarea>
             </div>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </div>
 </div>
