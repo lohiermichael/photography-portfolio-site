@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const nodeMailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const { check, validationResult } = require('express-validator');
 
 const app = express();
 const PORT = 3000;
@@ -74,18 +75,56 @@ app.get('/', (_, response) => {
 });
 
 app.get('/contact', (_, response) => {
-    response.render('contact');
+    response.render('contact', {
+        alertMsgPerInput: new Map(),
+        nameInput: '',
+        emailInput: '',
+        telephoneInput: '',
+        websiteInput: '',
+        messageInput: ''
+    });
 });
 
-app.post('/contact', async (request, response) => {
-    const { name, email, telephone, website, message } = request.body;
+app.post(
+    '/contact',
+    check('name')
+        .not().isEmpty()
+            .withMessage('The name is required'),
+    check('email')
+        .not().isEmpty()
+            .withMessage('The email is required')
+        .bail()
+        .isEmail()
+            .withMessage('Please enter a valid email')
+        .normalizeEmail(),
+    check('message')
+        .not().isEmpty()
+            .withMessage('The message is required'),
+    async (request, response) => {
+        const errors = validationResult(request);
+        const { name, email, telephone, website, message } = request.body;
+        if (!errors.isEmpty()) {
+            const alerts = errors.array();
+            const alertMsgPerInput = new Map();
+            alerts.forEach(alert => {
+                alertMsgPerInput.set(alert.param, alert.msg);
+            });
+            response.render('contact', {
+                alertMsgPerInput,
+                nameInput: name,
+                emailInput: email,
+                telephoneInput: telephone,
+                websiteInput: website,
+                messageInput: message
+            })
+        }
     try {
         await sendEmail(name, email, telephone, website, message);
         console.info('Email sent successfully!')
         response.redirect('thanks');
     } catch (error) {
         console.error('Error:', error);
-        response.redirect('contact');
+        response.status(500).send('Server error :(');
     }
 });
 

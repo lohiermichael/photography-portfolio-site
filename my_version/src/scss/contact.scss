@@ -159,6 +159,16 @@
             font-size: .8rem;
             padding: .25rem;
             width: 100%;
+
+            &.with-alert {
+                border-color: $contact-h1-text-color;
+            }
+        }
+
+        .alert-message {
+            color: $contact-h1-text-color;
+            font-weight: 500;
+            font-size: 1rem;
         }
 
     }

@@ -53,36 +53,56 @@
             <div class="contact-form__field">
                 <label for="name">*Name:</label>
                 <input
-                    class="contact-infos-container__text"
+                    class=
+                        "contact-infos-container__text
+                        <% if (alertMsgPerInput.has('name')) { %>
+                        with-alert
+                        <% } %>"
+                    value="<%= nameInput %>"
                     type="text"
                     placeholder="John Doe"
-                    name="name"
-                    required>
+                    name="name">
+                <% if (alertMsgPerInput.has('name')) { %>
+                <p class="alert-message">
+                    <i><%= alertMsgPerInput.get('name') %></i>
+                </p>
+                <% } %>
             </div>
             <div class="contact-form__field">
                 <label for="email">*E-mail:</label>
                 <input
-                    class="contact-infos-container__text"
+                    class=
+                        "contact-infos-container__text
+                        <% if (alertMsgPerInput.has('email')) { %>
+                        with-alert
+                        <% } %>"
+                    value="<%= emailInput %>"
                     type="text"
                     placeholder="john.doe@gmail.com"
-                    name="email"
-                    required>
+                    name="email">
+                <% if (alertMsgPerInput.has('email')) { %>
+                <p class="alert-message">
+                    <i><%= alertMsgPerInput.get('email') %></i>
+                </p>
+                <% } %>
             </div>
             <div class="contact-form__field">
                 <label for="telephone">Tel:</label>
                 <input
                     class="contact-infos-container__text"
-                    type="text"
+                    value="<%= telephoneInput %>"
+                    type="tel"
                     placeholder="+33678930482"
                     name="telephone">
             </div>
             <div class="contact-form__field">
                 <label for="website">Website:</label>
                 <input
+                    class="contact-infos-container__text"
+                    value="<%= websiteInput %>"
                     type="text"
                     placeholder="www.john-doe.com"
                     name="website"
-                    class="contact-infos-container__text"
                 >
             </div>
             <div class="contact-form__field">
@@ -92,9 +112,18 @@
                     id=""
                     cols="20"
                     rows="5"
-                    class="contact-infos-container__text"
+                    class=
+                        "contact-infos-container__text
+                        <% if (alertMsgPerInput.has('message')) { %>
+                        with-alert
+                        <% } %>"
                     placeholder="I am interested in your services because..."
-                    required></textarea>
+                    ><%= messageInput %></textarea>
+                    <% if (alertMsgPerInput.has('message')) { %>
+                    <p class="alert-message">
+                        <i><%= alertMsgPerInput.get('message') %></i>
+                    </p>
+                    <% } %>
             </div>
             <button type="submit">Submit</button>
         </form>

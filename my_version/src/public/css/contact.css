@@ -180,6 +180,12 @@ a {
     font-size: .8rem;
     padding: .25rem;
     width: 100%; }
+    .contact-form__field > input.with-alert, .contact-form__field > textarea.with-alert {
+      border-color: #991e58; }
+  .contact-form__field .alert-message {
+    color: #991e58;
+    font-weight: 500;
+    font-size: 1rem; }
 
 @media screen and (min-width: 768px) {
   .contact-form .contact-form__title {
