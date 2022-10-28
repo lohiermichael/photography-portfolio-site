@@ -26,4 +26,37 @@
         gap: 1rem;
     }
 
+    & > img {
+        animation-name: reveal;
+        animation-duration: $animation-duration;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease-in;
+        transition: transform .2s;
+
+        // You won't have more than 5 images on the page
+        @for $i from 0 to 5 {
+            &:nth-child(#{$i+1}) {
+                animation-delay: #{$animation-init-delay+$animation-mul-delay*$i}s;
+            }
+        }
+
+        @include media-tablets-min {
+            &:hover {
+                transform: scale(1.1);
+                z-index: 2;
+            }
+        }
+
+    }
+
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+         }
+        100% {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 }
