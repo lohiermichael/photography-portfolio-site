@@ -34,6 +34,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     @include media-small-desktop-min {
       justify-content: flex-start;
@@ -49,18 +50,14 @@ a {
 
     // Closed (as a burger)
     &__button {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
       width: 2rem;
       height: 2rem;
       display: grid;
       place-items: center;
       cursor: pointer;
-      border: .1em solid $primary-text-color;
-
-      &.menu-open {
-        margin-left: 1.1rem;
-        margin-top: 1.4rem;
-      }
-
 
       @include media-small-desktop-min {
         display: none;
@@ -123,8 +120,9 @@ a {
       }
 
       &.menu-open {
-        margin-top: 2rem;
-        margin-left: 2rem;
+        position: absolute;
+        top: 5rem;
+        left: 1rem;
         display: flex;
         width: 100%;
         align-items: flex-start;
