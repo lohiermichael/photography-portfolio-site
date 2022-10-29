@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const GALLERY_IMAGES_FOLDER = path.join(__dirname + '/public/img/');
 
 // Static files
@@ -42,14 +42,20 @@ async function sendEmail(name, email, telephone, website, message) {
         html: `
         Bonjour Laurent, <br><br>
         Tu as un nouveau message sur laurentxdubois.com: <br><br>
-        Name: ${name},<br><br>
-        Email: ${email},<br><br>
-        Telephone: ${telephone},<br><br>
-        Website: ${website}, <br><br>
-        Message: <br>
+        <hr>
+        <h3>Name:</h3> ${name},<br><br>
+        <hr>
+        <h3>Email:</h3> ${email},<br><br>
+        <hr>
+        <h3>Telephone:</h3> ${telephone},<br><br>
+        <hr>
+        <h3>Website:</h3> ${website}, <br><br>
+        <hr>
+        <h3>Message:</h3> <br>
 
         ${message} <br><br>
-
+        <hr>
+        <br><br>
         Pense à le recontacter! <br><br>
 
         Le bot de laurentxdubois.com
@@ -65,6 +71,8 @@ async function sendEmail(name, email, telephone, website, message) {
 }
 
 // Routes
+
+// Main route: gallery with photos in the main folder
 app.get('/', (_, response) => {
 
     // Get all images in the file
@@ -74,6 +82,7 @@ app.get('/', (_, response) => {
     response.render('gallery', { relativePathImages: '/img/main' , galleryImages });
 });
 
+// Contact GET route: Empty form data returned
 app.get('/contact', (_, response) => {
     response.render('contact', {
         alertMsgPerInput: new Map(),
@@ -85,6 +94,10 @@ app.get('/contact', (_, response) => {
     });
 });
 
+// Contact POST route: validate form and send an email
+// - If the form is not validated, we're redirected to the contact GET route
+// and the form is filled with the latest changes
+// - If the form is validated, we're redirected to the thanks route
 app.post(
     '/contact',
     check('name')
@@ -128,10 +141,12 @@ app.post(
     }
 });
 
+// Thanks route
 app.get('/thanks', (_, response) => {
     response.render('thanks');
 });
 
+// CV route
 app.get('/cv', (_, response) => {
     response.sendFile(
         path.join(__dirname + '/public/data/CVLaurentDuboisPhotography.pdf')
@@ -148,6 +163,7 @@ GALLERY_NAMES = [
     'editorial'
 ]
 
+// Gallery routes: gallery with photos of one of the folders of GALLERY_NAMES
 app.get('/:galleryName', (request, response) => {
     galleryName = request.params['galleryName']
     if (!GALLERY_NAMES.includes(galleryName)) {
@@ -163,6 +179,11 @@ app.get('/:galleryName', (request, response) => {
         );
     }
 });
+
+// Wildcard
+app.get('*', (_, response) => {
+    response.status(404).render('404')
+})
 
 // Port listening
 app.listen(PORT, () => {
