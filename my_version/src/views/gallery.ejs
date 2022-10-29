@@ -8,7 +8,6 @@
 <div class="gallery-container">
     <% galleryImages.forEach(imagePath => { %>
         <img
-            class="hide"
             src="<%= relativePathImages %>/<%= imagePath %>"
             alt="<%= relativePathImages %>/<%= imagePath %> not found">
     <% }); %>

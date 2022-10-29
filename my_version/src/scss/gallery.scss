@@ -53,10 +53,6 @@
 
     & > img {
 
-        &.hide {
-            visibility: hidden;
-        }
-
         &.reveal {
             animation-name: revealAnimation;
             animation-duration: $animation-duration;

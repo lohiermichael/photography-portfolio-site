@@ -106,11 +106,9 @@ a {
       overflow-x: scroll;
       width: 95%;
       flex-direction: row; } }
-  .gallery-container > img.hide {
-    visibility: hidden; }
   .gallery-container > img.reveal {
     animation-name: revealAnimation;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
     animation-timing-function: ease-in-out; }
   @media screen and (min-width: 768px) {
     .gallery-container > img {
