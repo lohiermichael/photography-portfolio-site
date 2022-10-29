@@ -184,8 +184,6 @@ a {
           color: #cc0000; }
       .header .nav .menu-nav__link {
         padding: .5rem; }
-        .header .nav .menu-nav__link:hover {
-          cursor: pointer; }
       .header .nav .menu-nav__dropdown-menu {
         display: none; }
       .header .nav .menu-nav__dropdown-item {
