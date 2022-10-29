@@ -106,28 +106,20 @@ a {
       overflow-x: scroll;
       width: 95%;
       flex-direction: row; } }
-  .gallery-container > img {
-    animation-name: reveal;
+  .gallery-container > img.hide {
+    visibility: hidden; }
+  .gallery-container > img.reveal {
+    animation-name: revealAnimation;
     animation-duration: 1s;
-    animation-fill-mode: backwards;
-    animation-timing-function: ease-in;
-    transition: transform .2s; }
-    .gallery-container > img:nth-child(1) {
-      animation-delay: 0.5s; }
-    .gallery-container > img:nth-child(2) {
-      animation-delay: 1s; }
-    .gallery-container > img:nth-child(3) {
-      animation-delay: 1.5s; }
-    .gallery-container > img:nth-child(4) {
-      animation-delay: 2s; }
-    .gallery-container > img:nth-child(5) {
-      animation-delay: 2.5s; }
-    @media screen and (min-width: 768px) {
+    animation-timing-function: ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .gallery-container > img {
+      transition: transform .3s ease-in-out; }
       .gallery-container > img:hover {
         transform: scale(1.1);
         z-index: 2; } }
 
-@keyframes reveal {
+@keyframes revealAnimation {
   0% {
     opacity: 0;
     visibility: hidden; }
