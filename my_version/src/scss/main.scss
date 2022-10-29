@@ -164,6 +164,11 @@ a {
 
       &__link {
         padding: .5rem;
+
+        // In case it is a p tag
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       &__dropdown-menu {
