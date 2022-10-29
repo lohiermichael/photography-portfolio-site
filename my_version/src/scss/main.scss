@@ -73,6 +73,7 @@ a {
 
         &::before, &::after {
           content: '';
+          transition: all .5s ease-in-out;
           position: absolute;
           background-color: $primary-text-color;
           border-radius: .8em;
@@ -92,6 +93,7 @@ a {
           background: transparent;
 
           &::before, &::after {
+            transition: transform .5s ease-in-out;
             width: 105%;
             height: .3em;
           }

@@ -124,6 +124,7 @@ a {
         position: relative; }
         .header .nav__button .burger::before, .header .nav__button .burger::after {
           content: '';
+          transition: all .5s ease-in-out;
           position: absolute;
           background-color: #e6e6e6;
           border-radius: .8em;
@@ -136,6 +137,7 @@ a {
         .header .nav__button .burger.menu-open {
           background: transparent; }
           .header .nav__button .burger.menu-open::before, .header .nav__button .burger.menu-open::after {
+            transition: transform .5s ease-in-out;
             width: 105%;
             height: .3em; }
           .header .nav__button .burger.menu-open::before {
