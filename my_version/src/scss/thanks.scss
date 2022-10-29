@@ -9,6 +9,10 @@
     align-items: center;
     justify-content: center;
 
+    &.menu-open {
+        display: none;
+    }
+
     .thanks-img {
         height: 50vh;
         object-fit: scale-down;

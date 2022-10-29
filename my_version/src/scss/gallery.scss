@@ -10,6 +10,10 @@
     top: 0;
     left: 0;
     z-index: -1;
+
+    &.menu-open {
+        display: none;
+    }
 }
 
 .gallery-container {
@@ -31,6 +35,10 @@
     element::-webkit-scrollbar {
         display: none;
         /* for Chrome, Safari, and Opera */
+    }
+
+    &.menu-open {
+        display: none;
     }
 
     @include media-tablets-min {

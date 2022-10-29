@@ -8,13 +8,14 @@
     <title>Laurent X. Dubois </title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="/img/siteIcon.png" />
-    <script type="module" src="/js/index.js" defer></script>
+    <script type="module" src="/js/header.js" defer></script>
     <% if (locals.otherCSSFile) { %>
         <link rel="stylesheet" href="/css/<%= otherCSSFile %>.css" />
     <% } %>
     <% if (locals.otherJSFile) { %>
-        <script src="/js/<%= otherJSFile %>.js" defer></script>
+        <script type="module" src="/js/<%= otherJSFile %>.js" defer></script>
     <% } %>
+    <script type="module" src="/js/menu-open.js"></script>
 </head>
 
 <body>

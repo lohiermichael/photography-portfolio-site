@@ -74,6 +74,8 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center; }
+  .thanks-container.menu-open {
+    display: none; }
   .thanks-container .thanks-img {
     height: 50vh;
     object-fit: scale-down;

@@ -77,6 +77,8 @@ a {
   top: 0;
   left: 0;
   z-index: -1; }
+  .background-video.menu-open {
+    display: none; }
 
 .gallery-container {
   color: #e6e6e6;
@@ -93,6 +95,8 @@ a {
   .gallery-container element::-webkit-scrollbar {
     display: none;
     /* for Chrome, Safari, and Opera */ }
+  .gallery-container.menu-open {
+    display: none; }
   @media screen and (min-width: 768px) {
     .gallery-container {
       height: 60vh;

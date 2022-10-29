@@ -1,5 +1,3 @@
-import { toggleElementsOnMenuOpening } from './menu-open.js';
-
 export const elementsToChangeOpen = [
     document.querySelector('.header'),
     document.querySelector('.nav'),
@@ -9,5 +7,3 @@ export const elementsToChangeOpen = [
     document.querySelector('.logo'),
     document.querySelector('.footer'),
 ];
-
-toggleElementsOnMenuOpening(elementsToChangeOpen);

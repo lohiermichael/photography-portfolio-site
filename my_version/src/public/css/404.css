@@ -69,11 +69,18 @@ th {
 a {
   text-decoration: none; }
 
-.error-img {
-  height: 50vh;
-  object-fit: scale-down; }
-
-.error-message {
-  color: red;
-  text-align: center;
-  font-size: 2rem; }
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; }
+  .error-container.menu-open {
+    display: none; }
+  .error-container .error-img {
+    height: 50vh;
+    object-fit: scale-down; }
+  .error-container .error-message {
+    color: red;
+    text-align: center;
+    font-size: 2rem; }

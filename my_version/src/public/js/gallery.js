@@ -1,3 +1,11 @@
+import { elementsToChangeOpen } from './header.js';
+
+// Hide these elements on menu-open
+elementsToChangeOpen.push(
+    document.querySelector('.gallery-container'),
+    document.querySelector('.background-video'),
+)
+
 // Make horizontal scrolling on vertical scrolling from tablet view: 768px
 const galleryContainer = document.querySelector('.gallery-container');
 galleryContainer.addEventListener('wheel', (scrollingEvent) => {
