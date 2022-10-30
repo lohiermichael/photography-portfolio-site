@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 const GALLERY_IMAGES_FOLDER = path.join(__dirname + '/public/img/');
 
 // Static files
@@ -185,7 +184,4 @@ app.get('*', (_, response) => {
     response.status(404).render('404')
 })
 
-// Port listening
-app.listen(PORT, () => {
-    console.log(`Application listening at http://localhost:${PORT}`);
-});
+module.exports = app;
