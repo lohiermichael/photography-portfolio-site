@@ -27,3 +27,14 @@ Run the container:
 [Google instructions](https://support.google.com/accounts/answer/185833?hl=en)
 
 2. Add the token to the `.env` file under `SENDER_GMAIL_PASSWORD`
+
+### ... add a new gallery of images
+
+1. Place your new set of images under `src/public/img` in a <gallery_name> folder.
+
+2. Add this <gallery_name> to the `src/app.js` file to the `GALLERY_NAMES` array
+   (preferably keeping the alphabetic order). This will allow to get the new URL
+   path: `www.laurentxdubois.com/<gallery_name>`.
+
+3. Additionally, if you want to add it to the menu, you need to edit the
+  `src/views/partials/header.ejs` file.
