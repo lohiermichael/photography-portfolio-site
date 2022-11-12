@@ -79,7 +79,8 @@ body {
 a {
   color: #e6e6e6; }
   a:hover {
-    color: #cc0000; }
+    color: #cc0000;
+    cursor: pointer; }
 
 .header {
   color: #e6e6e6;
