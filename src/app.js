@@ -160,6 +160,12 @@ GALLERY_NAMES = [
     'projects',
 ]
 
+// Secret route with the list of all galleries
+app.get('/__all-galleries__', (_, response) => {
+    response.render('all-galleries', { galleries: GALLERY_NAMES })
+});
+
+
 // Gallery routes: gallery with photos of one of the folders of GALLERY_NAMES
 app.get('/:galleryName', (request, response) => {
     galleryName = request.params['galleryName']
