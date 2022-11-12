@@ -42,16 +42,15 @@ async function sendEmail(name, email, telephone, website, message) {
         Bonjour Laurent, <br><br>
         Tu as un nouveau message sur laurentxdubois.com: <br><br>
         <hr>
-        <h3>Name:</h3> ${name},<br><br>
+        <h3>Name:</h3> ${name} <br><br>
         <hr>
-        <h3>Email:</h3> ${email},<br><br>
+        <h3>Email:</h3> ${email} <br><br>
         <hr>
-        <h3>Telephone:</h3> ${telephone},<br><br>
+        <h3>Telephone:</h3> ${telephone} <br><br>
         <hr>
-        <h3>Website:</h3> ${website}, <br><br>
+        <h3>Website:</h3> ${website} <br><br>
         <hr>
-        <h3>Message:</h3> <br>
-
+        <h3>Message:</h3><br>
         ${message} <br><br>
         <hr>
         <br><br>
