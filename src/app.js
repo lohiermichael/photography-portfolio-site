@@ -151,14 +151,13 @@ app.get('/cv', (_, response) => {
     );
 })
 
-
 GALLERY_NAMES = [
+    'agency-test',
+    'editorial',
     'fashion-week-1',
     'fashion-week-2',
     'portraits',
     'projects',
-    'agency-test',
-    'editorial'
 ]
 
 // Gallery routes: gallery with photos of one of the folders of GALLERY_NAMES
