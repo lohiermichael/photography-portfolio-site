@@ -137,3 +137,6 @@ Terms
 # Static images
 src/public/img/*/*
 src/public/img/*
+
+src/public/video/*/*
+src/public/video/*
