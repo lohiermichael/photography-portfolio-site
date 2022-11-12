@@ -7,15 +7,16 @@ const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 
 const app = express();
-const GALLERY_IMAGES_FOLDER = path.join(__dirname + '/public/img/');
+const GALLERY_IMAGES_FOLDER = path.join(__dirname, '/public/img/');
+const GALLERY_VIDEOS_FOLDER = path.join(__dirname, '/public/video/');
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/css', express.static(path.join(__dirname + 'public/css')));
-app.use('/img', express.static(path.join(__dirname + 'public/img')));
-app.use('/data', express.static(path.join(__dirname + 'public/data')));
-app.use('/js', express.static(path.join(__dirname + 'public/js')));
-app.use('/video', express.static(path.join(__dirname + 'public/video')));
+app.use('/css', express.static(path.join(__dirname, 'public/css')));
+app.use('/img', express.static(path.join(__dirname, 'public/img')));
+app.use('/data', express.static(path.join(__dirname, 'public/data')));
+app.use('/js', express.static(path.join(__dirname, 'public/js')));
+app.use('/video', express.static(path.join(__dirname, 'public/video')));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -147,7 +148,7 @@ app.get('/thanks', (_, response) => {
 // CV route
 app.get('/cv', (_, response) => {
     response.sendFile(
-        path.join(__dirname + '/public/data/CVLaurentDuboisPhotography.pdf')
+        path.join(__dirname, '/public/data/CVLaurentDuboisPhotography.pdf')
     );
 })
 
@@ -175,10 +176,20 @@ app.get('/:galleryName', (request, response) => {
         // Get all images in the file
         rootPathImages = path.join(GALLERY_IMAGES_FOLDER, galleryName);
         galleryImages = fs.readdirSync(rootPathImages).reverse();
+        let relativePathBackgroundVideo = '';
+        if (fs.existsSync(path.join(GALLERY_VIDEOS_FOLDER, galleryName))) {
+            relativePathBackgroundVideo = `/video/${galleryName}/background.mp4`;
+        } else {
+            relativePathBackgroundVideo = `/video/background.mp4`;
+        }
 
         response.render(
             'gallery',
-            { relativePathImages: `/img/${galleryName}`, galleryImages }
+            {
+                relativePathImages: `/img/${galleryName}`,
+                relativePathBackgroundVideo,
+                galleryImages
+            }
         );
     }
 });
