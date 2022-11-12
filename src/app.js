@@ -75,7 +75,7 @@ app.get('/', (_, response) => {
 
     // Get all images in the file
     rootPathImages = path.join(GALLERY_IMAGES_FOLDER, 'main');
-    galleryImages = fs.readdirSync(rootPathImages);
+    galleryImages = fs.readdirSync(rootPathImages).reverse();
 
     response.render('gallery', { relativePathImages: '/img/main' , galleryImages });
 });
@@ -169,7 +169,7 @@ app.get('/:galleryName', (request, response) => {
     } else {
         // Get all images in the file
         rootPathImages = path.join(GALLERY_IMAGES_FOLDER, galleryName);
-        galleryImages = fs.readdirSync(rootPathImages);
+        galleryImages = fs.readdirSync(rootPathImages).reverse();
 
         response.render(
             'gallery',
