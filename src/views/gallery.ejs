@@ -6,10 +6,10 @@
         <source src="/video/background.mp4" type="video/mp4">
 </video>
 <div class="gallery-container">
-    <% galleryImages.forEach(imagePath => { %>
+    <% galleryImages.forEach(imageName => { %>
         <img
-            src="<%= relativePathImages %>/<%= imagePath %>"
-            alt="<%= relativePathImages %>/<%= imagePath %> not found">
+            src="<%= relativePathImages %>/<%= imageName %>"
+            alt="<%= relativePathImages %>/<%= imageName %> not found">
     <% }); %>
 </div>
 <%- include('./partials/footer') %>
