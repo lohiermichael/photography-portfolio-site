@@ -22,7 +22,6 @@ galleryContainer.addEventListener('wheel', () => {
   galleryImages.forEach(image => {
     const imageVisible = isImageVisible(image);
     if (!(image.classList.contains('reveal')) & imageVisible) {
-      console.log('here');
       if (image.style.animationName == 'revealAnimation') {
         image.style.removeProperty('animation')
       }
