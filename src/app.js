@@ -170,9 +170,14 @@ app.get('/:galleryName', (request, response) => {
         galleryPath = path.join(GALLERIES_FOLDER, galleryName);
         imageNames = fs.readdirSync(path.join(galleryPath, 'images')).reverse();
 
+        let videosFolderExists = fs.existsSync(path.join(galleryPath, '/videos/'));
+
         response.render(
             'gallery',
-            { galleryPath: `/galleries/${galleryName}`, imageNames }
+            {
+                galleryPath: `/galleries/${galleryName}`,
+                imageNames, videosFolderExists
+            }
         );
     }
 });

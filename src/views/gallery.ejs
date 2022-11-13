@@ -1,10 +1,12 @@
 <%- include('./partials/header', {otherCSSFile: "gallery", otherJSFile: "gallery" }) %>
-<video
-    class="background-video"
-    poster="<%= galleryPath %>/videos/video.jpg"
-    autoplay muted loop playsinline>
-        <source src="<%= galleryPath %>/videos/video.mp4" type="video/mp4">
-</video>
+<% if (videosFolderExists) { %>
+    <video
+        class="background-video"
+        poster="<%= galleryPath %>/videos/video.jpg"
+        autoplay muted loop playsinline>
+            <source src="<%= galleryPath %>/videos/video.mp4" type="video/mp4">
+    </video>
+<% } %>
 <div class="gallery-container">
     <% imageNames.forEach(imageName => { %>
         <img
