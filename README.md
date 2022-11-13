@@ -30,11 +30,12 @@ Run the container:
 
 ### ... add a new gallery of images
 
-1. Place your new set of images under `src/public/img` in a <gallery_name> folder.
+1. Place your new set of images under `src/public/galleries` in a <gallery_name>
+   folder.
 
-2. Add this <gallery_name> to the `src/app.js` file to the `GALLERY_NAMES` array
-   (preferably keeping the alphabetic order). This will allow to get the new URL
-   path: `www.laurentxdubois.com/<gallery_name>`.
+2. In this <gallery_name> folder, there must be:
+   - An `images` folder in which the images of the gallery are
+   - A `videos` folder which a `video.mp4` that will be the background video
 
 3. Additionally, if you want to add it to the menu, you need to edit the
   `src/views/partials/header.ejs` file.
