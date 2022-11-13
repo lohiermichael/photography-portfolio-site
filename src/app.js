@@ -7,16 +7,16 @@ const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 
 const app = express();
-const GALLERY_IMAGES_FOLDER = path.join(__dirname, '/public/img/');
-const GALLERY_VIDEOS_FOLDER = path.join(__dirname, '/public/video/');
+
+const GALLERIES_FOLDER = path.join(__dirname, '/public/galleries/');
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
-app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/data', express.static(path.join(__dirname, 'public/data')));
+app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
-app.use('/video', express.static(path.join(__dirname, 'public/video')));
+app.use('/galleries', express.static(path.join(__dirname, 'public/galleries')));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -75,10 +75,10 @@ async function sendEmail(name, email, telephone, website, message) {
 app.get('/', (_, response) => {
 
     // Get all images in the file
-    rootPathImages = path.join(GALLERY_IMAGES_FOLDER, 'main');
-    galleryImages = fs.readdirSync(rootPathImages).reverse();
+    galleryPath = path.join(GALLERIES_FOLDER, 'default');
+    imageNames = fs.readdirSync(path.join(galleryPath, 'images')).reverse();
 
-    response.render('gallery', { relativePathImages: '/img/main' , galleryImages });
+    response.render('gallery', { galleryPath: '/galleries/default' , imageNames });
 });
 
 // Contact GET route: Empty form data returned
@@ -152,14 +152,7 @@ app.get('/cv', (_, response) => {
     );
 })
 
-GALLERY_NAMES = [
-    'agency-test',
-    'editorial',
-    'fashion-week-1',
-    'fashion-week-2',
-    'portraits',
-    'projects',
-]
+GALLERY_NAMES = fs.readdirSync(GALLERIES_FOLDER).reverse();
 
 // Secret route with the list of all galleries
 app.get('/__all-galleries__', (_, response) => {
@@ -174,22 +167,12 @@ app.get('/:galleryName', (request, response) => {
         response.status(404).render('404')
     } else {
         // Get all images in the file
-        rootPathImages = path.join(GALLERY_IMAGES_FOLDER, galleryName);
-        galleryImages = fs.readdirSync(rootPathImages).reverse();
-        let relativePathBackgroundVideo = '';
-        if (fs.existsSync(path.join(GALLERY_VIDEOS_FOLDER, galleryName))) {
-            relativePathBackgroundVideo = `/video/${galleryName}/background.mp4`;
-        } else {
-            relativePathBackgroundVideo = `/video/background.mp4`;
-        }
+        galleryPath = path.join(GALLERIES_FOLDER, galleryName);
+        imageNames = fs.readdirSync(path.join(galleryPath, 'images')).reverse();
 
         response.render(
             'gallery',
-            {
-                relativePathImages: `/img/${galleryName}`,
-                relativePathBackgroundVideo,
-                galleryImages
-            }
+            { galleryPath: `/galleries/${galleryName}`, imageNames }
         );
     }
 });

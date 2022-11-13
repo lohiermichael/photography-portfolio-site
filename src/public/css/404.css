@@ -74,7 +74,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem; }
+  gap: 2rem; }
   .error-container.menu-open {
     display: none; }
   .error-container .error-img {

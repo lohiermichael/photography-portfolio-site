@@ -1,15 +1,15 @@
 <%- include('./partials/header', {otherCSSFile: "gallery", otherJSFile: "gallery" }) %>
 <video
     class="background-video"
-    poster="/img/background.jpg"
+    poster="<%= galleryPath %>/videos/video.jpg"
     autoplay muted loop playsinline>
-        <source src="<%= relativePathBackgroundVideo %>" type="video/mp4">
+        <source src="<%= galleryPath %>/videos/video.mp4" type="video/mp4">
 </video>
 <div class="gallery-container">
-    <% galleryImages.forEach(imageName => { %>
+    <% imageNames.forEach(imageName => { %>
         <img
-            src="<%= relativePathImages %>/<%= imageName %>"
-            alt="<%= relativePathImages %>/<%= imageName %> not found">
+            src="<%= galleryPath %>/images/<%= imageName %>"
+            alt="<%= galleryPath %>/images/<%= imageName %> not found">
     <% }); %>
 </div>
 <%- include('./partials/footer') %>
