@@ -27,12 +27,11 @@ a {
   grid-template-columns: 1fr 6fr;
 
   @include media-small-desktop-min {
-    grid-template-columns: 5fr 3fr;
+    grid-template-columns: 9fr 4fr;
   }
 
   .nav {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -145,7 +144,7 @@ a {
         width: 13rem;
 
         @include media-small-desktop-min {
-          padding-inline: 1.2rem;
+          padding-inline: 1.85rem;
           padding-block: .5rem;
           text-align: center;
           width: inherit;
@@ -195,8 +194,9 @@ a {
         left: 13rem;
         top: 0rem;
         width: 12rem;
-        padding-inline: 1rem;
+        padding-inline: .3rem;
         background-color: $dropdown-menu-background-color;
+        white-space: nowrap;
 
         @include media-small-desktop-min {
           left: 0;
