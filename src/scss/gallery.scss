@@ -53,6 +53,8 @@
 
     & > img {
 
+        object-fit: cover;
+
         &.reveal {
             animation-name: revealAnimation;
             animation-duration: $animation-duration;

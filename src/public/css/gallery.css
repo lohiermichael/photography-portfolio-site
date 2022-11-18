@@ -106,16 +106,18 @@ a {
       overflow-x: scroll;
       width: 95%;
       flex-direction: row; } }
-  .gallery-container > img.reveal {
-    animation-name: revealAnimation;
-    animation-duration: 0.7s;
-    animation-timing-function: ease-in-out; }
-  @media screen and (min-width: 768px) {
-    .gallery-container > img {
-      transition: transform .3s ease-in-out; }
-      .gallery-container > img:hover {
-        transform: scale(1.1);
-        z-index: 2; } }
+  .gallery-container > img {
+    object-fit: cover; }
+    .gallery-container > img.reveal {
+      animation-name: revealAnimation;
+      animation-duration: 0.7s;
+      animation-timing-function: ease-in-out; }
+    @media screen and (min-width: 768px) {
+      .gallery-container > img {
+        transition: transform .3s ease-in-out; }
+        .gallery-container > img:hover {
+          transform: scale(1.1);
+          z-index: 2; } }
 
 @keyframes revealAnimation {
   0% {
