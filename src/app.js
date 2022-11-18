@@ -78,7 +78,13 @@ app.get('/', (_, response) => {
     galleryPath = path.join(GALLERIES_FOLDER, 'default');
     imageNames = fs.readdirSync(path.join(galleryPath, 'images')).reverse();
 
-    response.render('gallery', { galleryPath: '/galleries/default' , imageNames });
+    let videosFolderExists = fs.existsSync(path.join(galleryPath, '/videos/'));
+
+    response.render('gallery', {
+        galleryPath: '/galleries/default',
+        imageNames,
+        videosFolderExists
+    });
 });
 
 // Contact GET route: Empty form data returned
