@@ -35,7 +35,7 @@ Run the container:
 
 2. In this <gallery_name> folder, there must be:
    - An `images` folder in which the images of the gallery are
-   - A `videos` folder which a `video.mp4` that will be the background video
+   - A `videos` folder with a `video.mp4` that will be the background video
 
 3. Additionally, if you want to add it to the menu, you need to edit the
   `src/views/partials/header.ejs` file.
