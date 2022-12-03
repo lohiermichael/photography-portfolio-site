@@ -87,6 +87,10 @@ app.get('/', (_, response) => {
     });
 });
 
+app.get('/test', (_, response) => {
+    response.render('gallery-new')
+});
+
 // Contact GET route: Empty form data returned
 app.get('/contact', (_, response) => {
     response.render('contact', {

@@ -1,0 +1,182 @@
+@import "./reset.scss";
+@import "./variables-test.scss";
+@import "./responsive.scss";
+
+body {
+    height: 100vh;
+    font-family: "Calibri", monospace;
+    background-color: black;
+}
+
+a {
+    color: inherit;
+}
+
+.header {
+
+    // Closed (as a burger)
+    .burger-button {
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        width: $button-side;
+        height: $button-side;
+        cursor: pointer;
+
+        .burger {
+            // middle bar
+            height: $button-side/7;
+            margin-inline: auto;
+            background-color: $primary-text-color;
+            border-radius: .4*$button-side;
+            position: relative;
+            top: 3*$button-side/7;
+
+            // lower and upper bars
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-color: $primary-text-color;
+                border-radius: .4*$button-side;
+                height: $button-side/7;
+                width: 100%;
+                transition: transform .5s ease-in-out;
+            }
+
+            &::before {
+                transform: translateY(-2*$button-side/7);
+            }
+
+            &::after {
+                transform: translateY(2*$button-side/7);
+            }
+
+            &.menu-open {
+                background: transparent;
+
+                &::before {
+                    transform: rotate(45deg);
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    .menu-nav {
+        // On phone screen, by default, the menu is not displayed, only on click
+        // it changes
+        display: none;
+
+        &.menu-open {
+            margin-top: 4rem;
+            margin-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            color: $primary-text-color;
+        }
+
+        &__link {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 0.938rem;
+            font-variant: small-caps;
+            letter-spacing: 0.188rem;
+            padding: 1rem;
+            width: 10rem;
+            white-space: nowrap;
+
+            // &>a:focus {
+            //     color: $hover-text-color;
+            // }
+        }
+
+        .menu-nav__item-with-dropdown>.menu-nav__link.dropdown-open {
+            color: $hover-text-color;
+        }
+
+        &__dropdown-menu {
+            display: none;
+        }
+
+        &__dropdown-menu.dropdown-open {
+            animation: translateY 300ms ease-in-out forwards;
+            transform-origin: top center;
+            display: flex;
+            flex-direction: column;
+            margin-left: 3rem;
+            color: $primary-text-color;
+        }
+
+        @keyframes translateY {
+            0% {
+                opacity: 0;
+                transform: translateX(-5rem);
+            }
+
+            80% {
+                transform: translateX(1rem);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0rem);
+                width: 12rem;
+                background-color: $dropdown-background;
+            }
+        }
+    }
+
+    .logo {
+        margin-top: 2rem;
+        margin-left: 2*$button-side;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &.menu-open {
+            display: none;
+        }
+
+        &__title {
+            color: $primary-text-color;
+            font-family: 'Lato', sans-serif;
+            font-variant: small-caps;
+            font-weight: 300;
+            letter-spacing: 0.188rem;
+            font-size: 1.563rem;
+            white-space: nowrap;
+        }
+
+        &__subtitle {
+            color: $secondary-text-color;
+            font-family: 'Quicksand', sans-serif;
+            font-variant: small-caps;
+            font-weight: 200;
+            font-size: 1.125rem;
+            letter-spacing: 0.188rem;
+            text-align: center;
+        }
+
+        &__social-media {
+            color: $primary-text-color;
+            font-family: 'Quicksand', sans-serif;
+            font-variant: small-caps;
+            font-weight: 100;
+            font-size: 1.125rem;
+            letter-spacing: 0.188rem;
+            text-align: center;
+            white-space: nowrap;
+
+            & > a {
+                &:hover {
+                    color: $hover-text-color;
+                }
+            }
+        }
+    }
+
+}
