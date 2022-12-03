@@ -6,7 +6,9 @@ body {
     height: 100vh;
     font-family: "Calibri", monospace;
     background-color: black;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 a {
@@ -242,5 +244,76 @@ a {
             }
         }
     }
+}
 
+.footer {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    &.menu-open {
+        display: none;
+    }
+
+    &__list-item {
+        color: $primary-text-color;
+
+        &:nth-child(1) {
+            margin-bottom: .5rem;
+
+            @include media-tablets-min {
+                margin: 1rem;
+            }
+        }
+
+        @include media-tablets-min {
+            margin: 1rem;
+        }
+    }
+
+    &__separator {
+        color: $primary-text-color;
+         @include media-tablets-min {
+            margin-inline: 1rem;
+        }
+    }
+
+  &__paragraph {
+      color: $secondary-text-color;
+      font-size: .9rem;
+  }
+
+  &__contact-item {
+    &> a {
+        font-size: .9rem;
+        color:  $primary-text-color;
+        display: block;
+
+        &:hover {
+            color: $hover-text-color;
+        }
+    }
+
+  }
+
+  &__contact-list {
+
+    @include media-tablets-min {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+  }
+
+  &__rights {
+      margin-top: .7rem;
+      font-size: .9rem;
+    @include media-tablets-min {
+        margin-top: 0;
+    }
+  }
 }
