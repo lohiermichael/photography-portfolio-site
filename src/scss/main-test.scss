@@ -6,6 +6,7 @@ body {
     height: 100vh;
     font-family: "Calibri", monospace;
     background-color: black;
+
 }
 
 a {
@@ -14,8 +15,18 @@ a {
 
 .header {
 
+    @include media-small-desktop-min {
+        display: flex;
+        justify-content: space-between;
+    }
+
     // Closed (as a burger)
     .burger-button {
+
+        @include media-small-desktop-min {
+            display: none;
+        }
+
         position: absolute;
         top: 1rem;
         left: 2rem;
@@ -71,12 +82,22 @@ a {
         // it changes
         display: none;
 
+        @include media-small-desktop-min {
+            display: flex;
+            padding: 1.5rem;
+            color: $primary-text-color;
+        }
+
         &.menu-open {
             margin-top: 4rem;
             margin-left: 1rem;
             display: flex;
             flex-direction: column;
             color: $primary-text-color;
+        }
+
+        &__item {
+            width: fit-content;
         }
 
         &__link {
@@ -86,32 +107,72 @@ a {
             font-variant: small-caps;
             letter-spacing: 0.188rem;
             padding: 1rem;
-            width: 10rem;
+            width: 12rem;
+            display: inline-block;
             white-space: nowrap;
 
-            // &>a:focus {
-            //     color: $hover-text-color;
-            // }
+            &:hover {
+                color: $hover-text-color;
+                background-color: $hover-background-color;
+            }
+
+            @include media-small-desktop-min {
+                width: fit-content;
+            }
         }
 
-        .menu-nav__item-with-dropdown>.menu-nav__link.dropdown-open {
+        &__item-with-dropdown>.menu-nav__link.dropdown-open {
             color: $hover-text-color;
+            background-color: $hover-background-color;
+        }
+
+        &__item-with-dropdown:hover {
+
+            & > a{
+                @include media-small-desktop-min {
+                    color: $hover-text-color;
+                    background-color: $hover-background-color;
+                }
+            }
+
+            & > .menu-nav__dropdown-menu {
+                @include media-small-desktop-min {
+                    animation: translateX 300ms ease-in-out forwards;
+                    transform-origin: top center;
+                    display: flex;
+                    flex-direction: column;
+                    color: $primary-text-color;
+                    background-color: $dropdown-background-color;
+                }
+            }
         }
 
         &__dropdown-menu {
             display: none;
         }
 
+        &__dropdown-menu {
+            @include media-small-desktop-min {
+                position: absolute;
+            }
+        }
+
+        &__dropdown-item > .menu-nav__link {
+            @include media-small-desktop-min {
+                width: 12rem;
+            }
+        }
+
         &__dropdown-menu.dropdown-open {
-            animation: translateY 300ms ease-in-out forwards;
+            animation: translateX 300ms ease-in-out forwards;
             transform-origin: top center;
             display: flex;
             flex-direction: column;
-            margin-left: 3rem;
             color: $primary-text-color;
+            background-color: $dropdown-background-color;
         }
 
-        @keyframes translateY {
+        @keyframes translateX {
             0% {
                 opacity: 0;
                 transform: translateX(-5rem);
@@ -124,8 +185,6 @@ a {
             100% {
                 opacity: 1;
                 transform: translateX(0rem);
-                width: 12rem;
-                background-color: $dropdown-background;
             }
         }
     }
@@ -136,6 +195,11 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include media-small-desktop-min {
+            margin-left: 0;
+            margin-right: 4rem;
+        }
 
         &.menu-open {
             display: none;

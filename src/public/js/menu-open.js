@@ -2,17 +2,24 @@
 // in other Javascript files: contact.js, gallery.js...
 import { elementsToChangeOpen } from './header.js'
 
-let STATE = "CLOSED"
+let STATE = "DROPDOWN_CLOSED"
 
-// For mobiles on click item-with-dropdown show the dropdown
+// For mobiles ant tablets, on click item-with-dropdown show the dropdown
 const itemWithDropdown = document.querySelector('.menu-nav__item-with-dropdown>.menu-nav__link');
 const dropdownMenu = document.querySelector('.menu-nav__dropdown-menu');
 itemWithDropdown.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('dropdown-open');
-    itemWithDropdown.classList.toggle('dropdown-open');
+    if (window.innerWidth < 992) {
+        dropdownMenu.classList.toggle('dropdown-open');
+        itemWithDropdown.classList.toggle('dropdown-open');
+        // Update the state
+        if (STATE == "DROPDOWN_CLOSED") {
+            STATE = "DROPDOWN_OPENED";
+        } else {
+            STATE = "DROPDOWN_CLOSED";
+        }
+    }
 });
 
-// const navButton = document.querySelector('.nav__button');
 const burgerButton = document.querySelector('.burger-button');
 
 function toggleMobileMenu() {
@@ -22,27 +29,27 @@ function toggleMobileMenu() {
 };
 
 burgerButton.addEventListener('click', () => {
-    // If it is opened, close the dropdown when closing the menu
-    if (STATE == "OPENED") {
-        dropdownMenu.classList.remove('dropdown-open');
-        itemWithDropdown.classList.remove('dropdown-open');
-    }
+    if (window.innerWidth < 992) {
+        // If it is opened, close the dropdown when closing the menu
+        if (STATE == "DROPDOWN_OPENED") {
+            dropdownMenu.classList.remove('dropdown-open');
+            itemWithDropdown.classList.remove('dropdown-open');
+        }
 
-    // Update the state
-    if (STATE == "CLOSED") {
-        STATE = "OPENED";
-    } else {
-        STATE = "CLOSED";
+        // Update the state
+        if (STATE == "DROPDOWN_CLOSED") {
+            STATE = "DROPDOWN_OPENED";
+        } else {
+            STATE = "DROPDOWN_CLOSED";
+        }
+        toggleMobileMenu();
     }
-    toggleMobileMenu();
-
 });
-
 
 // Close mobile menu on resize
 window.addEventListener('resize', () => {
     const isMenuOpened = elementsToChangeOpen[0].classList.contains('menu-open');
-    if (window.innerWidth >= 768 & isMenuOpened) toggleMobileMenu();
+    if (window.innerWidth >= 992 & isMenuOpened) toggleMobileMenu();
 
 });
 
