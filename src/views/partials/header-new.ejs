@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laurent X. Dubois </title>
+    <link
+        href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400|
+              Marcellus+SC|Lato:100,300,400,700|Quicksand:300,400|
+              Source+Code+Pro:200,300,400|Open+Sans:400,300|Roboto:400,100,300"
+        rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/main-test.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/site-icon.jpg" />
+    <script type="module" src="/js/header.js" defer></script>
+    <% if (locals.otherCSSFile) { %>
+        <link rel="stylesheet" href="/css/<%= otherCSSFile %>.css" />
+    <% } %>
+    <% if (locals.otherJSFile) { %>
+        <script type="module" src="/js/<%= otherJSFile %>.js" defer></script>
+    <% } %>
+    <script type="module" src="/js/menu-open.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="burger-button">
+            <div class="burger"></div>
+        </div>
+        <ul class="menu-nav">
+            <li class="menu-nav__item menu-nav__item-with-dropdown">
+                <h3 class="menu-nav__link">
+                    <a href="#" onclick="return false;">fashion</a>
+                </h3>
+                <ul class="menu-nav__dropdown-menu">
+                    <li class="menu-nav__dropdown-item">
+                        <h3 class="menu-nav__link">
+                            <a href="/fashion-week-1">
+                                fashion week i
+                            </a>
+                        </h3>
+                    </li>
+                    <li class="menu-nav__dropdown-item">
+                        <h3 class="menu-nav__link">
+                            <a href="/fashion-week-2">
+                                fashion week ii
+                            </a>
+                        </h3>
+                    </li>
+                    <li class="menu-nav__dropdown-item">
+                        <h3 class="menu-nav__link">
+                            <a href="/portraits">
+                                portraits
+                            </a>
+                        </h3>
+                    </li>
+                    <li class="menu-nav__dropdown-item">
+                        <h3 class="menu-nav__link">
+                            <a href="/projects">
+                                projects
+                            </a>
+                        </h3>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-nav__dropdown-item">
+                <h3 class="menu-nav__link">
+                    <a href="/agency-test">
+                        agency test
+                    </a>
+                </h3>
+            </li>
+            <li class="menu-nav__dropdown-item">
+                <h3 class="menu-nav__link">
+                    <a href="/edtirial">
+                        editorial
+                    </a>
+                </h3>
+            </li>
+            <li class="menu-nav__dropdown-item">
+                <h3 class="menu-nav__link">
+                    <a href="/contact">
+                        contact & info
+                    </a>
+                </h3>
+            </li>
+        </ul>
+        <div class="logo">
+            <a href="">
+                <h1 class="logo__title">Laurent X. Dubois</h1>
+                <h2 class="logo__subtitle">Paris</h2>
+            </a>
+            <div class="logo__social-media">
+                <a href="https://www.instagram.com/laurentxdubois/" target="_blank">instagram
+                </a>
+                -
+                <a href="https://www.youtube.com/channel/UCBKdjX7ZbqgZmNYWaU3izsw" target="_blank">youtube
+                </a>
+            </div>
+        </div>
+    </header>
