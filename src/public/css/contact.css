@@ -146,24 +146,27 @@ a {
       .contact-infos-container .contact-form {
         width: 28.75rem; } }
     .contact-infos-container .contact-form__field > label {
-      cursor: pointer;
       color: #9b0e0e;
       display: block;
       font-weight: 900;
       margin-bottom: .5rem;
       text-align: center; }
-    .contact-infos-container .contact-form__field > input,
-    .contact-infos-container .contact-form__field textarea {
+    .contact-infos-container .contact-form__field > input, .contact-infos-container .contact-form__field textarea {
       border: 0.063rem solid #CCC;
       background: #FFF;
       border-radius: .313rem;
       font: 400 .75rem/.75rem "Helvetica Neue", Helvetica, Arial, sans-serif;
       width: 100%;
       padding: .5rem; }
-      .contact-infos-container .contact-form__field > input:focus,
-      .contact-infos-container .contact-form__field textarea:focus {
+      .contact-infos-container .contact-form__field > input.with-alert, .contact-infos-container .contact-form__field textarea.with-alert {
+        border-color: #991e58; }
+      .contact-infos-container .contact-form__field > input:focus, .contact-infos-container .contact-form__field textarea:focus {
         outline: none;
         border: .063rem solid #999; }
+    .contact-infos-container .contact-form__field .alert-message {
+      color: #991e58;
+      font-weight: 300;
+      font-size: .8rem; }
     .contact-infos-container .contact-form > button {
       width: 50%;
       margin-inline: auto;
