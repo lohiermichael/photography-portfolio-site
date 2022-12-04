@@ -99,6 +99,17 @@ app.get('/contact', (_, response) => {
     });
 });
 
+app.get('/contact-new', (_, response) => {
+    response.render('contact-new', {
+        alertMsgPerInput: new Map(),
+        nameInput: '',
+        emailInput: '',
+        telephoneInput: '',
+        websiteInput: '',
+        messageInput: ''
+    });
+});
+
 // Contact POST route: validate form and send an email
 // - If the form is not validated, we're redirected to the contact GET route
 // and the form is filled with the latest changes

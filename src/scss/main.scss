@@ -5,7 +5,7 @@
 body {
   height: 100vh;
   font-family: "Calibri", monospace;
-  background-color: black;
+  background-color: #181818;;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,6 +16,9 @@ a {
 }
 
 .header {
+
+  padding-top: 1rem;
+  padding-bottom: 3rem;
 
   @include media-small-desktop-min {
     display: flex;
@@ -253,7 +256,7 @@ a {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  margin-bottom: 1rem;
+  padding: 2rem;
 
   &.menu-open {
     display: none;
