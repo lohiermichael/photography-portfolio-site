@@ -2,203 +2,166 @@
 @import "./variables.scss";
 @import "./responsive.scss";
 
+
 .contact-infos-container {
-    background-color: $contact-background-color;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
     width: 90%;
     margin-inline: auto;
-    border-radius: .5rem;
-    padding:  .1rem;
+    border-radius: 0.25rem;
+    max-width: 60rem;
+    // height: 37.5rem;
+    margin: auto;
 
+    @include media-tablets-min {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 3rem;
+    }
 
     &.menu-open {
         display: none;
     }
 
-    h1 {
-        text-align: center;
+    &__text {
         font-family: 'Lato', sans-serif;
         font-weight: 300;
-        font-size: 1.5rem;
+        font-size: .938rem;
+        font-weight: 300;
+        text-align: left;
+        letter-spacing: .063;
+        color: black;
+    }
+
+    h1 {
+        color: #991e58;
+        font-size: 1.75rem;
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
         font-variant: small-caps;
-        letter-spacing: .4rem;
-        color: $contact-h1-text-color;
-        margin-block: 1rem;
-
-        @include media-small-desktop-min {
-            font-size: 1.7rem;
-        }
-
-        @include media-large-desktop-min {
-            font-size: 2rem;
-            letter-spacing: .5rem;
-        }
+        text-align: left;
+        letter-spacing: .188rem;
     }
 
     h2 {
+        color: #888888;
         font-family: 'Quicksand', sans-serif;
         font-weight: 100;
-        font-size: 1.2rem;
+        font-size: 1.125rem;
         font-variant: small-caps;
-        letter-spacing: .2rem;
-        color: $contact-h2-text-color;
-        margin-block: .3rem;
-        display:inline-block;
-        border-bottom: .15rem solid $contact-h2-text-color;
-        padding-bottom:.1rem;
-
-        @include media-small-desktop-min {
-            font-size: 1.4rem;
-        }
-
-        @include media-large-desktop-min {
-            font-size: 1.5rem;
-            letter-spacing: .25rem;
-        }
+        text-align: center;
+        letter-spacing: .188rem;
     }
 
-    &__text {
-        font-family: 'Lato',
-            sans-serif;
-        font-weight: 50;
-        font-size: .9rem;
-        font-weight: 100;
-        color: $contact-text-color;
+    h3 {
+        color: #b3b3b3;
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: .875rem;
+        font-variant: small-caps;
+        text-align: left;
+        letter-spacing: .125px;
+    }
 
-        @include media-small-desktop-min {
-            font-size: 1rem;
+    .infos {
+        @include media-tablets-min {
+            width: 25rem;
         }
 
-        @include media-large-desktop-min {
-            font-size: 1.1rem;
-        }
-    }
-}
-
-.contact-infos-wrapper {
-    border: .2rem solid $contact-h1-text-color;
-    border-radius: .5rem;
-    padding: 1.5rem 1rem;
-
-    @include media-tablets-min {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include media-small-desktop-min {
-        padding-inline: 2.5rem;
-    }
-
-    @include media-large-desktop-min {
-        padding-inline: 5rem;
-    }
-}
-
-.infos {
-
-    .bio {
-
-
-        &__intro {
-            margin-block: 1rem;
+        &__title {
+            margin-bottom: 1rem;
         }
 
-        &__availabilities {
-            margin-block: 1rem;
-            & > li {
-                list-style-type: disc;
+        .bio {
+            &__title {
+                margin-bottom: 2rem;
+            }
+
+            &__availabilities>li {
                 margin-left: 1rem;
             }
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
         }
 
-        &__outro {
-            margin-block: 1rem;
-        }
-    }
+        .personal-contacts {
+            &__title {
+                margin-block: 2rem;
+            }
 
-    .personal-contacts {
-        &__list {
-            font-family: 'Lato',
-            sans-serif;
-            font-weight: 50;
-            font-size: .9rem;
-            font-weight: 300;
-            color: $contact-text-color;
-            letter-spacing: .06rm;
-            margin-block: 1.5rem;
-
-            & > li {
-                list-style-type: disc;
-                margin-left: 1rem;
+            &__list {
+                display: flex;
+                flex-direction: column;
+                gap: .1rem;
             }
         }
-
-        .cv-link {
-            color: blue;
-        }
     }
-}
 
-.contact-form {
+    .contact-form {
 
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
 
-    &__field {
+        @include media-tablets-min {
+            width: 28.75rem;
+        }
 
-        margin-top: 1rem;
+        &__field {
+            &>label {
+                cursor: pointer;
+                color: #9b0e0e;
+                display: block;
+                font-weight: 900;
+                margin-bottom: .5rem;
+                text-align: center;
+            }
 
-        & > label {
+            &>input,
+            textarea {
+                border: 0.063rem solid #CCC;
+                ;
+                background: #FFF;
+                border-radius: .313rem;
+                font: 400 .75rem/.75rem "Helvetica Neue", Helvetica, Arial, sans-serif;
+                width: 100%;
+                padding: .5rem;
+
+                &:focus {
+                    outline: none;
+                    border: .063rem solid #999
+                }
+            }
+
+        }
+
+        &>button {
+            width: 50%;
+            margin-inline: auto;
+            width: 8.438rem;
+            height: 2.813rem;
+            letter-spacing: .125px;
+            font-family: 'Lato', sans-serif;
             cursor: pointer;
-            color: $contact-h1-text-color;
-            display: block;
-            font-weight: 900;
-            margin-bottom: .5rem;
-        }
+            color: #F9F9F9;
+            ;
+            background-color: #5a5a5a;
+            border-radius: .313rem;
 
-        & > input, & > textarea {
-            border: .16rem solid $contact-input-color;
-            border-radius: .2rem;
-            font-size: .8rem;
-            padding: .25rem;
-            width: 100%;
-
-            &.with-alert {
-                border-color: $contact-h1-text-color;
+            &:hover {
+                color: #5a5a5a;
+                background-color: #F9F9F9;
+                border-color: #5a5a5a;
             }
         }
-
-        .alert-message {
-            color: $contact-h1-text-color;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
     }
 
-    @include media-tablets-min {
-        .contact-form__title {
-            margin-bottom: 2rem;
-        }
-    }
-
-    @include media-large-desktop-min {
-        .contact-form__title {
-            margin-bottom: 5rem;
-        }
-    }
-
-
-
-    & > button {
-        margin-top: 1rem;
-        padding: .5rem 1rem;
-        background-color: $contact-h1-text-color;
-        color: $contact-background-color;
-        border-radius: .6rem;
-        cursor: pointer;
-
-        &:hover {
-            color: $contact-h1-text-color;
-            background-color: $contact-background-color;
-            border-color: $contact-h1-text-color;
-        }
-    }
 }
