@@ -175,7 +175,7 @@ a {
     font-weight: 900;
     margin-bottom: .5rem; }
   .contact-form__field > input, .contact-form__field > textarea {
-    border: 0.16rem solid #AAA;
+    border: 0.16rem solid #CCC;
     border-radius: .2rem;
     font-size: .8rem;
     padding: .25rem;
