@@ -117,7 +117,6 @@
 
         &__field {
             &>label {
-                cursor: pointer;
                 color: #9b0e0e;
                 display: block;
                 font-weight: 900;
@@ -125,20 +124,28 @@
                 text-align: center;
             }
 
-            &>input,
-            textarea {
+            &>input, textarea {
                 border: 0.063rem solid #CCC;
-                ;
                 background: #FFF;
                 border-radius: .313rem;
                 font: 400 .75rem/.75rem "Helvetica Neue", Helvetica, Arial, sans-serif;
                 width: 100%;
                 padding: .5rem;
 
+                &.with-alert {
+                    border-color: #991e58;
+                }
+
                 &:focus {
                     outline: none;
                     border: .063rem solid #999
                 }
+            }
+
+            .alert-message {
+                color: #991e58;
+                font-weight: 300;
+                font-size: .8rem;
             }
 
         }
