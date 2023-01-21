@@ -22,10 +22,15 @@
 
         .gallery-item {
             font-family: "Lato", sans-serif;
+            color: $primary-text-color;
             font-weight: 300;
             font-size: 1rem;
             font-variant: small-caps;
             font-style: italic;
+
+            &:hover {
+                color: $hover-text-color;
+            }
 
             @include media-small-desktop-min {
                 font-size: 1.2rem;
