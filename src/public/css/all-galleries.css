@@ -84,10 +84,13 @@ a {
     gap: .7rem; }
     .galleries-list-container .galleries-list .gallery-item {
       font-family: "Lato", sans-serif;
+      color: #e6e6e6;
       font-weight: 300;
       font-size: 1rem;
       font-variant: small-caps;
       font-style: italic; }
+      .galleries-list-container .galleries-list .gallery-item:hover {
+        color: #ca1414; }
       @media screen and (min-width: 992px) {
         .galleries-list-container .galleries-list .gallery-item {
           font-size: 1.2rem; } }
