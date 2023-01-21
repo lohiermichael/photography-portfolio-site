@@ -193,4 +193,6 @@ app.get('*', (_, response) => {
     response.status(404).render('404')
 })
 
-module.exports = app;
+app.listen(3000, () => {
+  console.log('App listening on port 3000!')
+})
