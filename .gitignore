@@ -135,6 +135,6 @@ Footer navigation
 Terms
 
 # Static images
-src/public/img
-src/public/data
-src/public/galleries
+public/img
+public/data
+public/galleries
