@@ -44,7 +44,7 @@
         display: none;
     }
 
-    @include media-tablets-min {
+    @include media-small-desktop-min {
         height: 60vh;
         overflow-x: scroll;
         width: 95%;
@@ -63,7 +63,7 @@
 
         }
 
-        @include media-tablets-min {
+        @include media-small-desktop-min {
 
             transition: transform .3s ease-in-out;
             &:hover {
