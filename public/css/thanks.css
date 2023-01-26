@@ -82,6 +82,9 @@ a {
     margin-bottom: 1rem; }
   .thanks-container .main-thanks-message {
     color: #e6e6e6;
-    font-size: 150%; }
+    font-size: 150%;
+    text-align: center;
+    margin-bottom: .5rem; }
   .thanks-container .sub-thanks-message {
-    color: #888888; }
+    color: #888888;
+    text-align: center; }
