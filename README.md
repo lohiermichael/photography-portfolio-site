@@ -39,3 +39,8 @@ Run the container:
 
 3. Additionally, if you want to add it to the menu, you need to edit the
   `src/views/partials/header.ejs` file.
+
+### ... setup GoogleAnalytics
+
+Add your `ga_measurement_id` under a variable called:
+`GOOGLE_ANALYTICS_MEASUREMENT_ID` in the `.env` file and it should be good!

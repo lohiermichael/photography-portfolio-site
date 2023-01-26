@@ -69,6 +69,8 @@ async function sendEmail(name, email, telephone, website, message) {
     }
 }
 
+const googleAnalyticsMeasurementId = process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID;
+
 // Routes
 
 // Main route: gallery with photos in the main folder
@@ -83,7 +85,8 @@ app.get('/', (_, response) => {
     response.render('gallery', {
         galleryPath: '/galleries/default',
         imageNames,
-        videosFolderExists
+        videosFolderExists,
+        googleAnalyticsMeasurementId,
     });
 });
 
@@ -95,7 +98,8 @@ app.get('/contact', (_, response) => {
         emailInput: '',
         telephoneInput: '',
         websiteInput: '',
-        messageInput: ''
+        messageInput: '',
+        googleAnalyticsMeasurementId,
     });
 });
 
@@ -133,7 +137,8 @@ app.post(
                 emailInput: email,
                 telephoneInput: telephone,
                 websiteInput: website,
-                messageInput: message
+                messageInput: message,
+                googleAnalyticsMeasurementId,
             })
         }
     try {
@@ -148,7 +153,7 @@ app.post(
 
 // Thanks route
 app.get('/thanks', (_, response) => {
-    response.render('thanks');
+    response.render('thanks', { googleAnalyticsMeasurementId, });
 });
 
 // CV route
@@ -162,7 +167,10 @@ GALLERY_NAMES = fs.readdirSync(GALLERIES_FOLDER).reverse();
 
 // Secret route with the list of all galleries
 app.get('/__all-galleries__', (_, response) => {
-    response.render('all-galleries', { galleries: GALLERY_NAMES })
+    response.render('all-galleries', {
+        galleries: GALLERY_NAMES,
+        googleAnalyticsMeasurementId,
+    })
 });
 
 
@@ -182,7 +190,7 @@ app.get('/:galleryName', (request, response) => {
             'gallery',
             {
                 galleryPath: `/galleries/${galleryName}`,
-                imageNames, videosFolderExists
+                imageNames, videosFolderExists, googleAnalyticsMeasurementId,
             }
         );
     }

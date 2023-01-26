@@ -13,6 +13,22 @@
         rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="/img/site-icon.jpg" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="module" src="/js/menu-open.js"></script>
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=<%= googleAnalyticsMeasurementId %>">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag(
+            'config',
+            '<%= googleAnalyticsMeasurementId %>',
+            {'cookie_flags': 'SameSite=None;Secure'}
+        );
+    </script>
     <script type="module" src="/js/header.js" defer></script>
     <% if (locals.otherCSSFile) { %>
         <link rel="stylesheet" href="/css/<%= otherCSSFile %>.css" />
