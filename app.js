@@ -178,7 +178,7 @@ app.get('/__all-galleries__', (_, response) => {
 app.get('/:galleryName', (request, response) => {
     galleryName = request.params['galleryName']
     if (!GALLERY_NAMES.includes(galleryName)) {
-        response.status(404).render('404')
+        response.status(404).render('404', { googleAnalyticsMeasurementId, })
     } else {
         // Get all images in the file
         galleryPath = path.join(GALLERIES_FOLDER, galleryName);
@@ -198,7 +198,7 @@ app.get('/:galleryName', (request, response) => {
 
 // Wildcard
 app.get('*', (_, response) => {
-    response.status(404).render('404')
+    response.render('404', { googleAnalyticsMeasurementId, })
 })
 
 app.listen(3000, () => {
