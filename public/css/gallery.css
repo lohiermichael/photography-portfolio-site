@@ -105,8 +105,7 @@ a {
       height: 60vh;
       overflow-x: scroll;
       width: 95%;
-      flex-direction: row;
-      justify-content: center; } }
+      flex-direction: row; } }
   .gallery-container > img {
     object-fit: cover; }
     .gallery-container > img.reveal {
