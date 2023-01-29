@@ -6,8 +6,26 @@ elementsToChangeOpen.push(
     document.querySelector('.background-video'),
 )
 
-// Make horizontal scrolling on vertical scrolling from tablet view: 768px
 const galleryContainer = document.querySelector('.gallery-container');
+
+// Center gallery-container only when it is small enough to be entirely on the
+// screen
+// Wait before everything is loaded
+window.onload = () => {
+  const lastImage = galleryContainer.querySelector('img:last-child');
+  const lastImageRectangle = lastImage.getBoundingClientRect();
+  console.log("lastImage", lastImageRectangle.right);
+  if (
+    lastImageRectangle.left > 0 &&
+    lastImageRectangle.right < (
+      window.innerWidth || document.documentElement.clientWidth
+    )
+  ) {
+    galleryContainer.style.justifyContent = 'center';
+  }
+}
+
+// Make horizontal scrolling on vertical scrolling from tablet view: 768px
 galleryContainer.addEventListener('wheel', (scrollingEvent) => {
   if (window.innerWidth >= 768) {
     scrollingEvent.preventDefault();
