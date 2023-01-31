@@ -27,7 +27,7 @@ window.onload = () => {
 
 // Make horizontal scrolling on vertical scrolling from tablet view: 768px
 galleryContainer.addEventListener('wheel', (scrollingEvent) => {
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 992) {
     scrollingEvent.preventDefault();
     galleryContainer.scrollLeft += scrollingEvent.deltaY + scrollingEvent.deltaX;
   }
