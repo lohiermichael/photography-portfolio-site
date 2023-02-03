@@ -14,7 +14,6 @@ const galleryContainer = document.querySelector('.gallery-container');
 window.onload = () => {
   const lastImage = galleryContainer.querySelector('img:last-child');
   const lastImageRectangle = lastImage.getBoundingClientRect();
-  console.log("lastImage", lastImageRectangle.right);
   if (
     lastImageRectangle.left > 0 &&
     lastImageRectangle.right < (
