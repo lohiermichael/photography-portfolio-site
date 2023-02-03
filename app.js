@@ -164,9 +164,9 @@ app.get('/cv', (_, response) => {
 });
 
 // Tariffs route
-app.get('/tariffs', (_, response) => {
+app.get('/tarifs', (_, response) => {
     response.sendFile(
-        path.join(__dirname, '/public/data/tariffs.pdf')
+        path.join(__dirname, '/public/data/tarifs.pdf')
     );
 });
 
