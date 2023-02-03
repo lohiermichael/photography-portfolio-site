@@ -161,7 +161,7 @@ app.get('/cv', (_, response) => {
     response.sendFile(
         path.join(__dirname, '/public/data/CVLaurentDuboisPhotography.pdf')
     );
-})
+});
 
 // Tariffs route
 app.get('/tariffs', (_, response) => {
@@ -206,8 +206,8 @@ app.get('/:galleryName', (request, response) => {
 // Wildcard
 app.get('*', (_, response) => {
     response.render('404', { googleAnalyticsMeasurementId, })
-})
+});
 
 app.listen(3000, () => {
-  console.log('App listening on port 3000!')
-})
+    console.log('App listening on port 3000!')
+});
