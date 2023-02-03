@@ -140,7 +140,7 @@ a {
     .header .menu-nav__link {
       font-family: 'Lato', sans-serif;
       font-weight: 300;
-      font-size: 0.938rem;
+      font-size: 1.2rem;
       font-variant: small-caps;
       letter-spacing: 0.188rem;
       padding: 1rem;
@@ -152,6 +152,7 @@ a {
         background-color: #181818; }
       @media screen and (min-width: 992px) {
         .header .menu-nav__link {
+          font-size: 0.938rem;
           width: fit-content; } }
     .header .menu-nav__item-with-dropdown > .menu-nav__link.dropdown-open {
       color: #ca1414;

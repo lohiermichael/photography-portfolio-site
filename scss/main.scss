@@ -108,7 +108,7 @@ a {
     &__link {
       font-family: 'Lato', sans-serif;
       font-weight: 300;
-      font-size: 0.938rem;
+      font-size: 1.2rem;
       font-variant: small-caps;
       letter-spacing: 0.188rem;
       padding: 1rem;
@@ -122,6 +122,7 @@ a {
       }
 
       @include media-small-desktop-min {
+        font-size: 0.938rem;
         width: fit-content;
       }
     }
