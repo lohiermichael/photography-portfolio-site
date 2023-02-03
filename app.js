@@ -173,7 +173,7 @@ app.get('/tarifs', (_, response) => {
 GALLERY_NAMES = fs.readdirSync(GALLERIES_FOLDER).reverse();
 
 // Secret route with the list of all galleries
-app.get('/__all-galleries__', (_, response) => {
+app.get('/__all__', (_, response) => {
     response.render('all-galleries', {
         galleries: GALLERY_NAMES,
         googleAnalyticsMeasurementId,
