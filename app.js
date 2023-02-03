@@ -163,6 +163,13 @@ app.get('/cv', (_, response) => {
     );
 })
 
+// Tariffs route
+app.get('/tariffs', (_, response) => {
+    response.sendFile(
+        path.join(__dirname, '/public/data/tariffs.pdf')
+    );
+});
+
 GALLERY_NAMES = fs.readdirSync(GALLERIES_FOLDER).reverse();
 
 // Secret route with the list of all galleries
